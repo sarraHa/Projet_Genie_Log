@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gildedrose.GildedRoseTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-09-17T14:47:02" hostname="bsarra-S551LB" time="0.026">
+<testsuite name="com.gildedrose.GildedRoseTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-09-19T11:36:10" hostname="bsarra-S551LB" time="0.033">
   <properties/>
-  <testcase name="foo()" classname="com.gildedrose.GildedRoseTest" time="0.023"/>
-  <testcase name="foo2()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="qualityProduitOrdinaire()" classname="com.gildedrose.GildedRoseTest" time="0.019"/>
+  <testcase name="qualityAgedBrie()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="sellInProduitOrdinaire()" classname="com.gildedrose.GildedRoseTest" time="0.006"/>
+  <testcase name="testNegativeQuality()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="sellInAgedBrie()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <system-out><![CDATA[name, sellIn, quality
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
