@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.gildedrose.GildedRoseTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-09-17T14:47:02" hostname="bsarra-S551LB" time="0.026">
+  <properties/>
+  <testcase name="foo()" classname="com.gildedrose.GildedRoseTest" time="0.023"/>
+  <testcase name="foo2()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
