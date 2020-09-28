@@ -7,3 +7,9 @@
 
 
 
+./gradlew tasks
+
+ ./gradlew jacocoTestReport
+
+
+
