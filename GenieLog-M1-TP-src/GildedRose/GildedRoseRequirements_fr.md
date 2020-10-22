@@ -20,6 +20,8 @@ Mais d'abord, laissez-moi vous présenter notre système :
 
 Plutôt simple, non ?
 
+
+
 Attendez, ça devient intéressant :
 
 - Une fois que la date de péremption est passée, la qualité se dégrade deux fois plus rapidement.
