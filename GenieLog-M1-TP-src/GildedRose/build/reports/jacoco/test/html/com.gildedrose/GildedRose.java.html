@@ -18,64 +18,77 @@ class GildedRose {
     public void updateQuality() {
 
 <span class="fc bfc" id="L20" title="All 2 branches covered.">        for (Item item : items) {</span>
-
-<span class="fc bfc" id="L22" title="All 2 branches covered.">            if( item.name.equals(sulfuras)){ continue; }</span>
-<span class="fc bfc" id="L23" title="All 2 branches covered.">            else if( item.name.equals(agedBrie)){ updateAgedBrie(item); }</span>
-<span class="fc bfc" id="L24" title="All 2 branches covered.">            else if (item.name.equals(backstage)){ updateBackstage(item); }</span>
-<span class="fc" id="L25">            else{ updateOtherItems(item); }</span>
+            
+<span class="fc" id="L22">            updateSellin( item );</span>
+<span class="fc bfc" id="L23" title="All 4 branches covered.">            switch(item.name) {</span>
+                case sulfuras:
+<span class="fc" id="L25">                    break;</span>
+                case agedBrie:
+<span class="fc" id="L27">                    updateAgedBrie(item);</span>
+<span class="fc" id="L28">                    break;</span>
+                case backstage:
+<span class="fc" id="L30">                    updateBackstage(item);</span>
+<span class="fc" id="L31">                    break;</span>
+                default:
+<span class="fc" id="L33">                    updateOtherItems(item); </span>
+            }
+              
         }
-<span class="fc" id="L27">    }</span>
+<span class="fc" id="L37">    }</span>
 
     private void updateQuality( Item item ) {
-<span class="fc bfc" id="L30" title="All 2 branches covered.">        if(qualityUnderMaxValue(item)){</span>
-<span class="fc" id="L31">            item.quality = item.quality + 1;        </span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        if(qualityUnderMaxValue(item)){</span>
+<span class="fc" id="L41">            item.quality = item.quality + 1;        </span>
         }
-<span class="fc" id="L33">    }</span>
-
-    private void updateQualityOtherItems( Item item ) {
-<span class="fc bfc" id="L36" title="All 2 branches covered.">        if (item.quality &gt; qualityMinimumValue) {</span>
-<span class="fc" id="L37">            item.quality = item.quality - 1;</span>
-        }
-<span class="fc" id="L39">    }</span>
-
-    private void updateSellin( Item item ) {
-<span class="fc" id="L42">        item.sellIn = item.sellIn - 1;</span>
 <span class="fc" id="L43">    }</span>
 
+    private void updateQualityOtherItems( Item item ) {
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        if (item.quality &gt; qualityMinimumValue) {</span>
+<span class="fc" id="L47">            item.quality = item.quality - 1;</span>
+        }
+<span class="fc" id="L49">    }</span>
+
+    private void updateSellin( Item item ) {
+<span class="fc" id="L52">        item.sellIn = item.sellIn - 1;</span>
+<span class="fc" id="L53">    }</span>
+
     private boolean qualityUnderMaxValue( Item item ) {
-<span class="fc bfc" id="L46" title="All 2 branches covered.">        return item.quality &lt; qualityMaximumValue;</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        return item.quality &lt; qualityMaximumValue;</span>
     }
 
     private boolean sellInUnder0( Item item ) {
-<span class="fc bfc" id="L50" title="All 2 branches covered.">        return item.sellIn &lt; 0;</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">        return item.sellIn &lt; 0;</span>
     }
 
     private void setQualityTo0(Item backstage){
-<span class="fc" id="L54">        backstage.quality = backstage.quality - backstage.quality;</span>
-<span class="fc" id="L55">    }</span>
+<span class="fc" id="L64">        backstage.quality = backstage.quality - backstage.quality;</span>
+<span class="fc" id="L65">    }</span>
 
     private void updateAgedBrie(Item agedBrie ){
-<span class="fc" id="L58">        updateQuality(agedBrie);</span>
-<span class="fc" id="L59">        updateSellin( agedBrie );</span>
-<span class="fc bfc" id="L60" title="All 2 branches covered.">        if(sellInUnder0(agedBrie)){</span>
-<span class="fc" id="L61">            updateQuality(agedBrie);</span>
+<span class="fc" id="L68">        updateQuality(agedBrie);</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">        if(sellInUnder0(agedBrie)){</span>
+<span class="fc" id="L70">            updateQuality(agedBrie);</span>
         }
-<span class="fc" id="L63">    }</span>
+<span class="fc" id="L72">    }</span>
 
     private void updateBackstage(Item backstage ){
-<span class="fc" id="L66">        updateQuality(backstage);</span>
-<span class="fc" id="L67">        updateSellin(backstage);</span>
-<span class="fc bfc" id="L68" title="All 2 branches covered.">        if (backstage.sellIn &lt; 11) { updateQuality(backstage); }</span>
-<span class="fc bfc" id="L69" title="All 2 branches covered.">        if (backstage.sellIn &lt; 6) { updateQuality(backstage); }</span>
-<span class="fc bfc" id="L70" title="All 2 branches covered.">        if (sellInUnder0(backstage)) { setQualityTo0(backstage); }</span>
-<span class="fc" id="L71">    }</span>
+<span class="fc" id="L75">        updateQuality(backstage);</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">        if (backstage.sellIn &lt; 11) { updateQuality(backstage); }</span>
+<span class="fc bfc" id="L77" title="All 2 branches covered.">        if (backstage.sellIn &lt; 6) { updateQuality(backstage); }</span>
+<span class="fc bfc" id="L78" title="All 2 branches covered.">        if (sellInUnder0(backstage)) { setQualityTo0(backstage); }</span>
+<span class="fc" id="L79">    }</span>
 
     private void updateOtherItems( Item item){
-<span class="fc" id="L74">        updateQualityOtherItems(item);</span>
-<span class="fc" id="L75">        updateSellin(item);</span>
-<span class="fc bfc" id="L76" title="All 2 branches covered.">        if (sellInUnder0(item)){</span>
-<span class="fc" id="L77">            updateQualityOtherItems(item);</span>
+<span class="fc" id="L82">        updateQualityOtherItems(item);</span>
+<span class="fc bfc" id="L83" title="All 2 branches covered.">        if (sellInUnder0(item)){</span>
+<span class="fc" id="L84">            updateQualityOtherItems(item);</span>
         }
-<span class="fc" id="L79">    }</span>
+<span class="fc" id="L86">    }</span>
+
+    private void updateConjured( Item conjured){
+<span class="nc" id="L89">        updateOtherItems(conjured);</span>
+<span class="nc" id="L90">        updateQualityOtherItems(conjured);</span>
+<span class="nc" id="L91">    }</span>
+    
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

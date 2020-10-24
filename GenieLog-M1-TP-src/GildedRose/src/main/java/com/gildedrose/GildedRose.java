@@ -29,6 +29,9 @@ class GildedRose {
                 case backstage:
                     updateBackstage(item);
                     break;
+                case conjured:
+                    updateConjured(item);
+                    break;
                 default:
                     updateOtherItems(item); 
             }
@@ -84,4 +87,10 @@ class GildedRose {
             updateQualityOtherItems(item);
         }
     }
+
+    private void updateConjured( Item conjured){
+        updateOtherItems(conjured);
+        updateQualityOtherItems(conjured);
+    }
+
 }

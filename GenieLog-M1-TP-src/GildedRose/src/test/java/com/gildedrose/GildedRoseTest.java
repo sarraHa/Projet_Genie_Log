@@ -353,9 +353,10 @@ class GildedRoseTest{
     /*################ End Sulfuras testes ######################################*/
 
     
+    /*################ Conjured testes ######################################*/
 
-    /*
-    marche pas encore
+    
+    //marche pas encore
     //- les éléments "Conjured" voient leur qualité se dégrader de deux fois plus vite que les objets normaux.
     @Test
     void qualityConjured() {
@@ -370,11 +371,4 @@ class GildedRoseTest{
         assertThat(app.items[0].sellIn, is( 3-1)) ;
 
     }
-    */
-
-  
-
-
-
 }
-
