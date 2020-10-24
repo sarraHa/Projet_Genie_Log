@@ -11,13 +11,22 @@ class GildedRose {
     public static final int qualityMaximumValue = 50;
     public static final int qualityMinimumValue =  0;
 
-    public static final int sellIn = 50;
-
-
 
     public GildedRose(Item[] items) {
         this.items = items;
     }
+
+    public void updateQuality() {
+
+        for (int i = 0; i < items.length; i++) {
+
+            if( items[i].name.equals(sulfuras)){ continue; }
+            else if( items[i].name.equals(agedBrie)){ updateAgedBrie( items[i]); }
+            else if (items[i].name.equals(backstage)){ updateBackstage(items[i]); }
+            else{ updateOtherItems( items[i]); }
+        }
+    }
+    
 
     private void updateQuality( Item item ) {
         if(qualityUnderMaxValue(item)){
@@ -57,20 +66,13 @@ class GildedRose {
 
     private void updateBackstage(Item backstage ){
         updateQuality(backstage);
-
-        if (backstage.sellIn < 11) {
-            updateQuality(backstage);
-        }
-        if (backstage.sellIn < 6) {
-            updateQuality(backstage);
-        }
         updateSellin(backstage);
-        if (sellInUnder0(backstage)) {
-            setQualityTo0(backstage);
-        }
+        if (backstage.sellIn < 11) { updateQuality(backstage); }
+        if (backstage.sellIn < 6) { updateQuality(backstage); }
+        if (sellInUnder0(backstage)) { setQualityTo0(backstage); }
     }
 
-    private void UpdateOtherItems( Item item){
+    private void updateOtherItems( Item item){
         updateQualityOtherItems(item);
         updateSellin(item);
         if (sellInUnder0(item)){
@@ -78,19 +80,5 @@ class GildedRose {
         }
     }
 
-    public void updateQuality() {
-
-        for (int i = 0; i < items.length; i++) {
-
-            if( items[i].name.equals(sulfuras)){
-                continue;
-            }else if( items[i].name.equals(agedBrie)){
-                updateAgedBrie( items[i]);
-            }else if (items[i].name.equals(backstage)) {
-                updateBackstage(items[i]);
-            }else{
-                UpdateOtherItems( items[i]);
-            }
-        }
-    }
+ 
 }
