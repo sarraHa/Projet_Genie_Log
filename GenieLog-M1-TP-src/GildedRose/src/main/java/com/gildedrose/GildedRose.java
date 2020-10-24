@@ -17,6 +17,10 @@ class GildedRose {
         item.quality = item.quality + 1;
     }
 
+    private void updateQualityOtherItems( Item item ) {
+        item.quality = item.quality - 1;
+    }
+
     private void updateSellin( Item item ) {
         item.sellIn = item.sellIn - 1;
     }
@@ -82,17 +86,15 @@ class GildedRose {
                 updateBackstage(items[i]);
             }
 
-
-
-
-            if (!items[i].name.equals("Aged Brie")
-                    && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+            if (!items[i].name.equals(agedBrie)
+                    && !items[i].name.equals(backstage)) {
 
                 if (items[i].quality > 0) {
 
-                    if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
+                    if (!items[i].name.equals(sulfuras)) {
                         // si c'est un produit ordinaire
-                        items[i].quality = items[i].quality - 1;
+                        //items[i].quality = items[i].quality - 1;
+                        updateQualityOtherItems(items[i]);
                     }
                 }
 
@@ -100,10 +102,8 @@ class GildedRose {
 
 
             // update sellIn of all products unless Sulfuras and aged Brie and Backstage
-            // 
-            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros") && !items[i].name.equals(agedBrie) 
-            
-            && !items[i].name.equals(backstage)) {
+            // OtherItems
+            if (!items[i].name.equals(sulfuras) && !items[i].name.equals(agedBrie) && !items[i].name.equals(backstage)) {
 
                 updateSellin(items[i]);
             }
@@ -111,11 +111,12 @@ class GildedRose {
 
             // if sellin < 0
             if (items[i].sellIn < 0) {
-                if (!items[i].name.equals("Aged Brie")) {
-                    if (!items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                if (!items[i].name.equals(agedBrie)) {
+                    if (!items[i].name.equals(backstage)) {
                         if (items[i].quality > 0) {
-                            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                                items[i].quality = items[i].quality - 1;
+                            if (!items[i].name.equals(sulfuras)) {
+                              //  items[i].quality = items[i].quality - 1;
+                                updateQualityOtherItems(items[i]);
                             }
                         }
                     } 
