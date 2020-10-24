@@ -89,17 +89,23 @@ class GildedRose {
 
         for (int i = 0; i < items.length; i++) {
 
-            if( items[i].name.equals(agedBrie)){
+            if( items[i].name.equals(sulfuras)){
+                continue;
+            }else if( items[i].name.equals(agedBrie)){
                 updateAgedBrie( items[i]);
-            }
-
-            if (items[i].name.equals(backstage)) {
+            }else if (items[i].name.equals(backstage)) {
                 updateBackstage(items[i]);
+            }else{
+                UpdateOtherItems( items[i]);
             }
 
+          
+            /*---->
             if (!items[i].name.equals(agedBrie) && !items[i].name.equals(backstage) && !items[i].name.equals(sulfuras) ) {
                 UpdateOtherItems( items[i]);
             }
+            ------->*/
+            
         }
     }
 }
