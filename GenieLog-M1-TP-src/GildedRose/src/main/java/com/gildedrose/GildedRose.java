@@ -35,6 +35,9 @@ class GildedRose {
         return item.quality < qualityMaximumValue;
     }
 
+    private boolean sellInUnder0( Item item ) {
+        return item.sellIn < 0;
+    }
 
 
     private void updateAgedBrie(Item agedBrie ){
@@ -45,7 +48,7 @@ class GildedRose {
         }else{
             updateSellin(agedBrie);   
         }        
-        if(agedBrie.sellIn < 0 && qualityUnderMaxValue(agedBrie) ){
+        if(sellInUnder0(agedBrie) && qualityUnderMaxValue(agedBrie) ){
             updateQuality(agedBrie);
         }
     }
@@ -65,7 +68,7 @@ class GildedRose {
             }
         }
         updateSellin(backstage);
-        if (backstage.sellIn < 0) {
+        if (sellInUnder0(backstage)) {
             backstage.quality = backstage.quality - backstage.quality;
         }
     }
@@ -75,7 +78,7 @@ class GildedRose {
             updateQualityOtherItems(item);
         }
         updateSellin(item);
-        if (item.sellIn < 0) {
+        if (sellInUnder0(item)){
             if (item.quality > qualityMinimumValue) {
                 updateQualityOtherItems(item);
             }
