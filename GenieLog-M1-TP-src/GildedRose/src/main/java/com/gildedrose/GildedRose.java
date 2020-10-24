@@ -72,6 +72,9 @@ class GildedRose {
 
     private void UpdateOtherItems( Item item){
 
+        if (item.quality > 0) {
+                updateQualityOtherItems(item);
+        }
     }
 
     public void updateQuality() {
@@ -86,9 +89,9 @@ class GildedRose {
                 updateBackstage(items[i]);
             }
 
-            if (!items[i].name.equals(agedBrie)
-                    && !items[i].name.equals(backstage)) {
+            if (!items[i].name.equals(agedBrie) && !items[i].name.equals(backstage) && !items[i].name.equals(sulfuras) ) {
 
+                /*--------------->
                 if (items[i].quality > 0) {
 
                     if (!items[i].name.equals(sulfuras)) {
@@ -97,6 +100,11 @@ class GildedRose {
                         updateQualityOtherItems(items[i]);
                     }
                 }
+                //------------------> */
+
+                UpdateOtherItems( items[i]);
+
+
 
             }
 

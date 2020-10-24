@@ -7,7 +7,7 @@ import static org.hamcrest.Matchers.*;
 class GildedRoseTest{
 
 
-/*#################################### Ordinare Item #################################*/
+/*#################################### Other Items testes #################################*/
 
     // Tester le nom sellIN , quality
     @Test
@@ -41,23 +41,12 @@ class GildedRoseTest{
         
         Item[] items = new Item[] { new Item("+5 Dexterity Vest", 10, 20) };
         GildedRose app = new GildedRose(items);
+        int expectedQuality = app.items[0].quality - 1;
         int expectedSellIn = app.items[0].sellIn - 1;
         app.updateQuality();
 
-        assertThat(app.items[0].sellIn, is( expectedSellIn ));
-    }
-
-    //Tester la quality d'un produit ordinaire ( sellIn > 0)
-    @Test
-    void qualityProduitOrdinaire() {        
-        // name, sellIn, quality
-
-        Item[] items = new Item[] { new Item("+5 Dexterity Vest", 10, 20) };
-        GildedRose app = new GildedRose(items);
-        int expectedQuality = app.items[0].quality - 1;
-        app.updateQuality();
-
         assertThat(app.items[0].quality, is( expectedQuality ));
+        assertThat(app.items[0].sellIn, is( expectedSellIn ));
     }
       
     //Tester la quality d'un produit ordinaire ( sellIn < 0) et qualité < 0
@@ -95,21 +84,10 @@ class GildedRoseTest{
         Item[] items = new Item[] { new Item("Elixir of the Mongoose", -2, 20) };
         GildedRose app = new GildedRose(items);
         int expectedQuality = 20-2;
-        app.updateQuality();
-
-        assertThat(app.items[0].quality, is( expectedQuality )) ;
-    }
-
-    //- Une fois que la date de péremption est passée, la qualité se dégrade deux fois plus rapidement.
-    @Test
-    void sellInywhensellinisnegativ() {
-                
-        // name, sellIn, quality
-        Item[] items = new Item[] { new Item("Elixir of the Mongoose", -2, 20) };
-        GildedRose app = new GildedRose(items);
         int expectedSellIn= -2 -1;
         app.updateQuality();
 
+        assertThat(app.items[0].quality, is( expectedQuality )) ;
         assertThat(app.items[0].sellIn, is( expectedSellIn )) ;
     }
 
