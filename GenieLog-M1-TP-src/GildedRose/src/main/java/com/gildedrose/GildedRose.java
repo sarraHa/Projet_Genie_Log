@@ -8,6 +8,12 @@ class GildedRose {
     public static final String sulfuras = "Sulfuras, Hand of Ragnaros";
     public static final String conjured = "Conjured Mana Cake";
 
+    public static final int qualityMaximumValue = 50;
+    public static final int qualityMinimumValue =  0;
+
+    public static final int sellIn = 50;
+
+
 
     public GildedRose(Item[] items) {
         this.items = items;
@@ -25,30 +31,36 @@ class GildedRose {
         item.sellIn = item.sellIn - 1;
     }
 
+    private boolean qualityUnderMaxValue( Item item ) {
+        return item.quality < qualityMaximumValue;
+    }
+
+
+
     private void updateAgedBrie(Item agedBrie ){
-        if(agedBrie.quality < 50){
+        if(qualityUnderMaxValue(agedBrie)){
             updateQuality(agedBrie);
             updateSellin( agedBrie );
         
         }else{
             updateSellin(agedBrie);   
         }        
-        if(agedBrie.sellIn < 0 && agedBrie.quality < 50){
+        if(agedBrie.sellIn < 0 && qualityUnderMaxValue(agedBrie) ){
             updateQuality(agedBrie);
         }
     }
 
     private void updateBackstage(Item backstage ){
-        if( backstage.quality < 50){
+        if( qualityUnderMaxValue(backstage) ){
             updateQuality(backstage);
         }
         if (backstage.sellIn < 11) {
-            if (backstage.quality < 50) {
+            if ( qualityUnderMaxValue(backstage) ) {
                 updateQuality(backstage);
             }
         }
         if (backstage.sellIn < 6) {
-            if (backstage.quality < 50) {
+            if ( qualityUnderMaxValue(backstage) ) {
                 updateQuality(backstage);
             }
         }
@@ -59,12 +71,12 @@ class GildedRose {
     }
 
     private void UpdateOtherItems( Item item){
-        if (item.quality > 0) {
+        if (item.quality > qualityMinimumValue) {
             updateQualityOtherItems(item);
         }
         updateSellin(item);
         if (item.sellIn < 0) {
-            if (item.quality > 0) {
+            if (item.quality > qualityMinimumValue) {
                 updateQualityOtherItems(item);
             }
         }
