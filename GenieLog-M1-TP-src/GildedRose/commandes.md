@@ -13,3 +13,4 @@
 
 
 
+./gradlew test --info

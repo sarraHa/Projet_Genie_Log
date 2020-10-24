@@ -7,7 +7,7 @@ import static org.hamcrest.Matchers.*;
 class GildedRoseTest{
 
 
-    /*##################################### Ordinare Item #################################*/
+/*#################################### Ordinare Item #################################*/
 
     // Tester le nom sellIN , quality
     @Test
@@ -17,7 +17,7 @@ class GildedRoseTest{
         GildedRose app = new GildedRose(items);
         assertThat(app.items[0].name, is( "+5 Dexterity Vest" ));
         assertThat(app.items[0].sellIn, is( 10));
-        assertThat(app.items[0].quality, is( 20 ));
+        assertThat(app.items[0].quality, is(20));
     }
 
     // test tostring
@@ -41,7 +41,6 @@ class GildedRoseTest{
         
         Item[] items = new Item[] { new Item("+5 Dexterity Vest", 10, 20) };
         GildedRose app = new GildedRose(items);
-        System.out.println("name, sellIn, quality");
         int expectedSellIn = app.items[0].sellIn - 1;
         app.updateQuality();
 
@@ -88,37 +87,57 @@ class GildedRoseTest{
         app.updateQuality();
 
         assertThat(app.items[0].quality, is( expectedQuality ));
+        assertThat(app.items[0].sellIn, is( 1 ));
     }
 
+
+    //"Aged Brie" when sellIn < 0 
+    // la qualité augmente de 2 fois
     @Test
-    void sellInAgedBrie() {     
+    void qualityAgedBrieSellInNegative() {
 
         // name, sellIn, quality
-        Item[] items = new Item[] { new Item("Aged Brie", 2, 0) };
+        Item[] items = new Item[] { new Item("Aged Brie", -2, 9) };
         GildedRose app = new GildedRose(items);
-        int expectedSellIn = app.items[0].sellIn - 1;
+        int expectedQuality = app.items[0].quality + 2;
         app.updateQuality();
 
-        assertThat(app.items[0].quality, is( expectedSellIn ));
+        assertThat(app.items[0].quality, is( expectedQuality ));
+        assertThat(app.items[0].sellIn, is( -3 ));
+
     }
 
-       //"Aged Brie" when sellIn < 0 
-       // la qualité augmente de 2 fois
-       @Test
-       void qualityAgedBrieSellInNegative() {
-   
-           // name, sellIn, quality
-           Item[] items = new Item[] { new Item("Aged Brie", -2, 9) };
-           GildedRose app = new GildedRose(items);
-           int expectedQuality = app.items[0].quality + 2;
-           app.updateQuality();
-   
-           assertThat(app.items[0].quality, is( expectedQuality ));
-           assertThat(app.items[0].sellIn, is( -3 ));
+        //- La qualité d'un produit n'est jamais de plus de 50. pour "Aged Brie"
+        @Test
+        void qualityNotsuperiorto50_AdjBrie() {
+                
+            // name, sellIn, quality
+            Item[] items = new Item[] { new Item("Aged Brie", 2, 50) };
+            GildedRose app = new GildedRose(items);
+            int expectedQuality = 50;
+            app.updateQuality();
+
+            assertThat(app.items[0].quality, is( expectedQuality)) ;
+            assertThat(app.items[0].sellIn, is( 1)) ;
 
         }
 
-        //Tester le SellIn d'un produit ordinaire ( sellIn > 0)
+
+        //- La qualité d'un produit n'est jamais de plus de 50. pour "Aged Brie"
+        @Test
+        void qualityNotsuperiorto50SellInNegative() {
+                
+            // name, sellIn, quality
+            Item[] items = new Item[] { new Item("Aged Brie", -4, 49) };
+            GildedRose app = new GildedRose(items);
+            int expectedQuality = 50;
+            app.updateQuality();
+
+            assertThat(app.items[0].quality, is( expectedQuality)) ;
+            assertThat(app.items[0].sellIn, is( -5)) ;
+
+        }
+
         @Test
         void AgedBrieQualitySuperiorto50() {
             
@@ -126,13 +145,15 @@ class GildedRoseTest{
             
             Item[] items = new Item[] { new Item("Aged Brie", -10, 60) };
             GildedRose app = new GildedRose(items);
-            System.out.println("name, sellIn, quality");
             int expectedQuality = app.items[0].quality ;
             app.updateQuality();
 
             assertThat(app.items[0].quality, is( expectedQuality ));
         }
     
+    //################ fin aged brie ##########################"/
+
+
     //La qualité (`quality`) d'un produit ne peut jamais être négative.
     @Test
     void testNegativeQuality() {
@@ -184,21 +205,6 @@ class GildedRoseTest{
 
         assertThat(app.items[0].quality, is( expectedQuality)) ;
         assertThat(app.items[0].sellIn, is( 4)) ;
-
-    }
-
-    //- La qualité d'un produit n'est jamais de plus de 50. pour "Aged Brie"
-    @Test
-    void qualityNotsuperiorto50_AdjBrie() {
-                
-        // name, sellIn, quality
-        Item[] items = new Item[] { new Item("Aged Brie", 2, 50) };
-        GildedRose app = new GildedRose(items);
-        int expectedQuality= 50;
-        app.updateQuality();
-
-        assertThat(app.items[0].quality, is( expectedQuality)) ;
-        assertThat(app.items[0].sellIn, is( 1)) ;
 
     }
 
@@ -272,7 +278,7 @@ class GildedRoseTest{
         // name, sellIn, quality
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20) };
         GildedRose app = new GildedRose(items);
-        int expectedQuality= 21;
+        int expectedQuality = 21;
         app.updateQuality();
 
         assertThat(app.items[0].quality, is( expectedQuality)) ;
