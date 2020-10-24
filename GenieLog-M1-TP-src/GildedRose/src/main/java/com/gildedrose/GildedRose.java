@@ -40,7 +40,9 @@ class GildedRose {
 
     private void updateBackstage(Item backstage ){
 
-        updateQuality(backstage);
+        if( backstage.quality < 50){
+            updateQuality(backstage);
+        }
 
         if (backstage.sellIn < 11) {
             if (backstage.quality < 50) {
@@ -52,6 +54,12 @@ class GildedRose {
             if (backstage.quality < 50) {
                 updateQuality(backstage);
             }
+        }
+
+        updateSellin(backstage);
+
+        if (backstage.sellIn < 0) {
+            backstage.quality = backstage.quality - backstage.quality;
         }
    
     }
@@ -80,7 +88,7 @@ class GildedRose {
 
             } else {
                                 
-                if (items[i].quality < 50) {
+                //if (items[i].quality < 50) {
                     
                     // update quality Backstage passes
                    
@@ -89,18 +97,20 @@ class GildedRose {
 
                         updateBackstage(items[i]);
 
-
                     }
 
                     //------------->
 
-                }
+                //}
+
             }
 
 
             // update sellIn of all products unless Sulfuras and aged Brie
             // update sellIn Backstage passes
-            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros") && !items[i].name.equals(agedBrie)) {
+            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros") && !items[i].name.equals(agedBrie) 
+            
+            && !items[i].name.equals(backstage)) {
 
                 updateSellin(items[i]);
             }
@@ -118,7 +128,7 @@ class GildedRose {
                     } else {
 
                         // Backstage when sellIn < 0 => 0
-                        items[i].quality = items[i].quality - items[i].quality;
+                        //items[i].quality = items[i].quality - items[i].quality;
                     }
                 } 
             }
