@@ -3,8 +3,8 @@ package com.gildedrose;
 class GildedRose {
     Item[] items;
 
-    public static final String adgedBrie = "Aged Brie";
-    public static final String backstagePasses = "Backstage passes to a TAFKAL80ETC concert";
+    public static final String agedBrie = "Aged Brie";
+    public static final String backstage = "Backstage passes to a TAFKAL80ETC concert";
     public static final String conjured = "Conjured Mana Cake";
     public static final String sulfuras = "Sulfuras, Hand of Ragnaros";
 
@@ -38,11 +38,20 @@ class GildedRose {
     }
 
 
+    private void updateBackstage(Item backstage ){
+
+
+   
+    }
+
+
+
+
     public void updateQuality() {
 
         for (int i = 0; i < items.length; i++) {
 
-            if( items[i].name.equals(adgedBrie)){
+            if( items[i].name.equals(agedBrie)){
                 updateAgedBrie( items[i]);
             }
 
@@ -60,29 +69,35 @@ class GildedRose {
             } else {
                                 
                 if (items[i].quality < 50) {
-                    // Backstage passes
+
+                    
+                    // update quality Backstage passes
                     if (items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        items[i].quality = items[i].quality + 1;
+                        //items[i].quality = items[i].quality + 1;
+                        updateQuality(items[i]);
+
                         if (items[i].sellIn < 11) {
                             if (items[i].quality < 50) {
-                                items[i].quality = items[i].quality + 1;
+                                updateQuality(items[i]);
                             }
                         }
 
                         if (items[i].sellIn < 6) {
                             if (items[i].quality < 50) {
-                                items[i].quality = items[i].quality + 1;
+                                updateQuality(items[i]);
                             }
                         }
                     }
+
                 }
             }
 
 
-            // update sellIn of all products unless Sulfuras
-            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros") && !items[i].name.equals(adgedBrie)) {
+            // update sellIn of all products unless Sulfuras and aged Brie
+            // update sellIn Backstage passes
+            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros") && !items[i].name.equals(agedBrie)) {
 
-                items[i].sellIn = items[i].sellIn - 1;
+                updateSellin(items[i]);
             }
 
 
@@ -96,7 +111,8 @@ class GildedRose {
                             }
                         }
                     } else {
-                        //Une fois que la date de péremption est passée, la qualité se dégrade deux fois plus rapidement.
+
+                        // Backstage when sellIn < 0 => 0
                         items[i].quality = items[i].quality - items[i].quality;
                     }
                 } 
