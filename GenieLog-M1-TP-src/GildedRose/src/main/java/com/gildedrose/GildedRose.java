@@ -76,10 +76,9 @@ class GildedRose {
             }
 
             if (items[i].name.equals(backstage)) {
-
                 updateBackstage(items[i]);
-
             }
+
 
 
 
@@ -94,28 +93,11 @@ class GildedRose {
                     }
                 }
 
-            } else {
-                                
-                //if (items[i].quality < 50) {
-                    
-                    // update quality Backstage passes
-                   
-                    // ----------->
-                   // if (items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-
-                     //   updateBackstage(items[i]);
-
-                    //}
-
-                    //------------->
-
-                //}
-
             }
 
 
-            // update sellIn of all products unless Sulfuras and aged Brie
-            // update sellIn Backstage passes
+            // update sellIn of all products unless Sulfuras and aged Brie and Backstage
+            // 
             if (!items[i].name.equals("Sulfuras, Hand of Ragnaros") && !items[i].name.equals(agedBrie) 
             
             && !items[i].name.equals(backstage)) {
@@ -133,11 +115,7 @@ class GildedRose {
                                 items[i].quality = items[i].quality - 1;
                             }
                         }
-                    } else {
-
-                        // Backstage when sellIn < 0 => 0
-                        //items[i].quality = items[i].quality - items[i].quality;
-                    }
+                    } 
                 } 
             }
         }
