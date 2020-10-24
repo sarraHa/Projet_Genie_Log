@@ -40,7 +40,19 @@ class GildedRose {
 
     private void updateBackstage(Item backstage ){
 
+        updateQuality(backstage);
 
+        if (backstage.sellIn < 11) {
+            if (backstage.quality < 50) {
+                updateQuality(backstage);
+            }
+        }
+
+        if (backstage.sellIn < 6) {
+            if (backstage.quality < 50) {
+                updateQuality(backstage);
+            }
+        }
    
     }
 
@@ -69,25 +81,18 @@ class GildedRose {
             } else {
                                 
                 if (items[i].quality < 50) {
-
                     
                     // update quality Backstage passes
+                   
+                    // ----------->
                     if (items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        //items[i].quality = items[i].quality + 1;
-                        updateQuality(items[i]);
 
-                        if (items[i].sellIn < 11) {
-                            if (items[i].quality < 50) {
-                                updateQuality(items[i]);
-                            }
-                        }
+                        updateBackstage(items[i]);
 
-                        if (items[i].sellIn < 6) {
-                            if (items[i].quality < 50) {
-                                updateQuality(items[i]);
-                            }
-                        }
+
                     }
+
+                    //------------->
 
                 }
             }
