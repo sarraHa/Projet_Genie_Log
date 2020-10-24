@@ -18,15 +18,15 @@ class GildedRose {
 
     public void updateQuality() {
 
-        for (int i = 0; i < items.length; i++) {
+        for (Item item : items) {
 
-            if( items[i].name.equals(sulfuras)){ continue; }
-            else if( items[i].name.equals(agedBrie)){ updateAgedBrie( items[i]); }
-            else if (items[i].name.equals(backstage)){ updateBackstage(items[i]); }
-            else{ updateOtherItems( items[i]); }
+            if( item.name.equals(sulfuras)){ continue; }
+            else if( item.name.equals(agedBrie)){ updateAgedBrie(item); }
+            else if (item.name.equals(backstage)){ updateBackstage(item); }
+            else{ updateOtherItems(item); }
         }
     }
-    
+
 
     private void updateQuality( Item item ) {
         if(qualityUnderMaxValue(item)){
