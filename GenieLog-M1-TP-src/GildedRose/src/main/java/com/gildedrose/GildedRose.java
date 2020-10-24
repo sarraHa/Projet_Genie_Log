@@ -38,15 +38,26 @@ class GildedRose {
                 }
 
             } else {
-                if (items[i].quality < 50) {
 
+                //----------------> all the treatment for Aged Brie
+                if( items[i].name.equals(adgedBrie)){
+    
                     // Aged Brie quality < 50
-                    if(items[i].name.equals("Aged Brie")){
+                    if(items[i].quality < 50){
                         agedBrieUpdateQuality(items[i]);
                         agedBrieUpdateSellin( items[i] );
+                    
+                    }else{
+                        agedBrieUpdateSellin(items[i]);   
                     }
-
-
+                    
+                    if(items[i].sellIn < 0 && items[i].quality < 50){
+                        agedBrieUpdateQuality(items[i]);
+                    }
+                }
+                //----------> end treatment Aged Brie
+                
+                if (items[i].quality < 50) {
                     // Backstage passes
                     if (items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                         items[i].quality = items[i].quality + 1;
@@ -62,17 +73,9 @@ class GildedRose {
                             }
                         }
                     }
-                }else{
-                    if(items[i].name.equals(adgedBrie)){
-                        agedBrieUpdateSellin(items[i]);   
-                    }
                 }
             }
 
-            // aged brie quality > 50
-            if(items[i].name.equals(adgedBrie) && items[i].quality >= 50 ){
-              //  agedBrieUpdateSellin(items[i]);
-            }
 
             // update sellIn of all products unless Sulfuras
             if (!items[i].name.equals("Sulfuras, Hand of Ragnaros") && !items[i].name.equals(adgedBrie)) {
@@ -95,9 +98,10 @@ class GildedRose {
                         items[i].quality = items[i].quality - items[i].quality;
                     }
                 } else {
-                    if (items[i].quality < 50) {
-                        items[i].quality = items[i].quality + 1;
-                    }
+
+                    //if (items[i].quality < 50) {
+                      //  items[i].quality = items[i].quality + 1;
+                    //}
                 }
             }
         }
