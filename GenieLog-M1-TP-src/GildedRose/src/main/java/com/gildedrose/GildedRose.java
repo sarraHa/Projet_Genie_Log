@@ -21,6 +21,22 @@ class GildedRose {
         agedBrie.sellIn = agedBrie.sellIn - 1;
     }
 
+    private void updateAgedBrie(Item agedBrie ){
+
+        // Aged Brie quality < 50
+        if(agedBrie.quality < 50){
+            agedBrieUpdateQuality(agedBrie);
+            agedBrieUpdateSellin( agedBrie );
+        
+        }else{
+            agedBrieUpdateSellin(agedBrie);   
+        }
+        
+        if(agedBrie.sellIn < 0 && agedBrie.quality < 50){
+            agedBrieUpdateQuality(agedBrie);
+        }
+    }
+
 
     public void updateQuality() {
 
@@ -39,9 +55,10 @@ class GildedRose {
 
             } else {
 
-                //----------------> all the treatment for Aged Brie
                 if( items[i].name.equals(adgedBrie)){
-    
+
+                    updateAgedBrie( items[i]);
+                /*----------------> all the treatment for Aged Brie                    
                     // Aged Brie quality < 50
                     if(items[i].quality < 50){
                         agedBrieUpdateQuality(items[i]);
@@ -50,13 +67,14 @@ class GildedRose {
                     }else{
                         agedBrieUpdateSellin(items[i]);   
                     }
-                    
+
                     if(items[i].sellIn < 0 && items[i].quality < 50){
                         agedBrieUpdateQuality(items[i]);
                     }
+                //---------- end treatment Aged Brie------> */
+
                 }
-                //----------> end treatment Aged Brie
-                
+                                
                 if (items[i].quality < 50) {
                     // Backstage passes
                     if (items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
