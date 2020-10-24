@@ -26,58 +26,43 @@ class GildedRose {
     }
 
     private void updateAgedBrie(Item agedBrie ){
-
-        // Aged Brie quality < 50
         if(agedBrie.quality < 50){
             updateQuality(agedBrie);
             updateSellin( agedBrie );
         
         }else{
             updateSellin(agedBrie);   
-        }
-        
+        }        
         if(agedBrie.sellIn < 0 && agedBrie.quality < 50){
             updateQuality(agedBrie);
         }
     }
 
-
     private void updateBackstage(Item backstage ){
-
         if( backstage.quality < 50){
             updateQuality(backstage);
         }
-
         if (backstage.sellIn < 11) {
             if (backstage.quality < 50) {
                 updateQuality(backstage);
             }
         }
-
         if (backstage.sellIn < 6) {
             if (backstage.quality < 50) {
                 updateQuality(backstage);
             }
         }
-
         updateSellin(backstage);
-
         if (backstage.sellIn < 0) {
             backstage.quality = backstage.quality - backstage.quality;
         }
-   
     }
 
-
-
     private void UpdateOtherItems( Item item){
-
         if (item.quality > 0) {
             updateQualityOtherItems(item);
         }
-    
         updateSellin(item);
-    
         if (item.sellIn < 0) {
             if (item.quality > 0) {
                 updateQualityOtherItems(item);
@@ -98,14 +83,6 @@ class GildedRose {
             }else{
                 UpdateOtherItems( items[i]);
             }
-
-          
-            /*---->
-            if (!items[i].name.equals(agedBrie) && !items[i].name.equals(backstage) && !items[i].name.equals(sulfuras) ) {
-                UpdateOtherItems( items[i]);
-            }
-            ------->*/
-            
         }
     }
 }
