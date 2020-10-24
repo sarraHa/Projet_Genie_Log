@@ -42,6 +42,10 @@ class GildedRose {
 
         for (int i = 0; i < items.length; i++) {
 
+            if( items[i].name.equals(adgedBrie)){
+                updateAgedBrie( items[i]);
+            }
+
             if (!items[i].name.equals("Aged Brie")
                     && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
 
@@ -55,9 +59,11 @@ class GildedRose {
 
             } else {
 
+                /*--------->
                 if( items[i].name.equals(adgedBrie)){
                     updateAgedBrie( items[i]);
                 }
+                ----------->*/
 
                                 
                 if (items[i].quality < 50) {
