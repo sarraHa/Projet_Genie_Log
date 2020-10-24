@@ -13,12 +13,12 @@ class GildedRose {
         this.items = items;
     }
 
-    private void updateQuality( Item agedBrie ) {
-        agedBrie.quality = agedBrie.quality + 1;
+    private void updateQuality( Item item ) {
+        item.quality = item.quality + 1;
     }
 
-    private void updateSellin( Item agedBrie ) {
-        agedBrie.sellIn = agedBrie.sellIn - 1;
+    private void updateSellin( Item item ) {
+        item.sellIn = item.sellIn - 1;
     }
 
     private void updateAgedBrie(Item agedBrie ){
@@ -58,13 +58,6 @@ class GildedRose {
                 }
 
             } else {
-
-                /*--------->
-                if( items[i].name.equals(adgedBrie)){
-                    updateAgedBrie( items[i]);
-                }
-                ----------->*/
-
                                 
                 if (items[i].quality < 50) {
                     // Backstage passes
