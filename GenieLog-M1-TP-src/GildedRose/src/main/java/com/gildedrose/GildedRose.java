@@ -13,11 +13,11 @@ class GildedRose {
         this.items = items;
     }
 
-    private void agedBrieUpdateQuality( Item agedBrie ) {
+    private void updateQuality( Item agedBrie ) {
         agedBrie.quality = agedBrie.quality + 1;
     }
 
-    private void agedBrieUpdateSellin( Item agedBrie ) {
+    private void updateSellin( Item agedBrie ) {
         agedBrie.sellIn = agedBrie.sellIn - 1;
     }
 
@@ -25,15 +25,15 @@ class GildedRose {
 
         // Aged Brie quality < 50
         if(agedBrie.quality < 50){
-            agedBrieUpdateQuality(agedBrie);
-            agedBrieUpdateSellin( agedBrie );
+            updateQuality(agedBrie);
+            updateSellin( agedBrie );
         
         }else{
-            agedBrieUpdateSellin(agedBrie);   
+            updateSellin(agedBrie);   
         }
         
         if(agedBrie.sellIn < 0 && agedBrie.quality < 50){
-            agedBrieUpdateQuality(agedBrie);
+            updateQuality(agedBrie);
         }
     }
 
@@ -56,24 +56,9 @@ class GildedRose {
             } else {
 
                 if( items[i].name.equals(adgedBrie)){
-
                     updateAgedBrie( items[i]);
-                /*----------------> all the treatment for Aged Brie                    
-                    // Aged Brie quality < 50
-                    if(items[i].quality < 50){
-                        agedBrieUpdateQuality(items[i]);
-                        agedBrieUpdateSellin( items[i] );
-                    
-                    }else{
-                        agedBrieUpdateSellin(items[i]);   
-                    }
-
-                    if(items[i].sellIn < 0 && items[i].quality < 50){
-                        agedBrieUpdateQuality(items[i]);
-                    }
-                //---------- end treatment Aged Brie------> */
-
                 }
+
                                 
                 if (items[i].quality < 50) {
                     // Backstage passes
@@ -115,12 +100,7 @@ class GildedRose {
                         //Une fois que la date de péremption est passée, la qualité se dégrade deux fois plus rapidement.
                         items[i].quality = items[i].quality - items[i].quality;
                     }
-                } else {
-
-                    //if (items[i].quality < 50) {
-                      //  items[i].quality = items[i].quality + 1;
-                    //}
-                }
+                } 
             }
         }
     }
