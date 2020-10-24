@@ -75,6 +75,8 @@ class GildedRose {
         if (item.quality > 0) {
                 updateQualityOtherItems(item);
         }
+        updateSellin(item);
+    
     }
 
     public void updateQuality() {
@@ -90,31 +92,20 @@ class GildedRose {
             }
 
             if (!items[i].name.equals(agedBrie) && !items[i].name.equals(backstage) && !items[i].name.equals(sulfuras) ) {
-
-                /*--------------->
-                if (items[i].quality > 0) {
-
-                    if (!items[i].name.equals(sulfuras)) {
-                        // si c'est un produit ordinaire
-                        //items[i].quality = items[i].quality - 1;
-                        updateQualityOtherItems(items[i]);
-                    }
-                }
-                //------------------> */
-
                 UpdateOtherItems( items[i]);
-
-
-
             }
 
 
             // update sellIn of all products unless Sulfuras and aged Brie and Backstage
             // OtherItems
+         
+            /*-------------------------->
             if (!items[i].name.equals(sulfuras) && !items[i].name.equals(agedBrie) && !items[i].name.equals(backstage)) {
 
                 updateSellin(items[i]);
             }
+
+            ----------------------------> */
 
 
             // if sellin < 0
