@@ -73,10 +73,16 @@ class GildedRose {
     private void UpdateOtherItems( Item item){
 
         if (item.quality > 0) {
-                updateQualityOtherItems(item);
+            updateQualityOtherItems(item);
         }
+    
         updateSellin(item);
     
+        if (item.sellIn < 0) {
+            if (item.quality > 0) {
+                updateQualityOtherItems(item);
+            }
+        }
     }
 
     public void updateQuality() {
@@ -93,33 +99,6 @@ class GildedRose {
 
             if (!items[i].name.equals(agedBrie) && !items[i].name.equals(backstage) && !items[i].name.equals(sulfuras) ) {
                 UpdateOtherItems( items[i]);
-            }
-
-
-            // update sellIn of all products unless Sulfuras and aged Brie and Backstage
-            // OtherItems
-         
-            /*-------------------------->
-            if (!items[i].name.equals(sulfuras) && !items[i].name.equals(agedBrie) && !items[i].name.equals(backstage)) {
-
-                updateSellin(items[i]);
-            }
-
-            ----------------------------> */
-
-
-            // if sellin < 0
-            if (items[i].sellIn < 0) {
-                if (!items[i].name.equals(agedBrie)) {
-                    if (!items[i].name.equals(backstage)) {
-                        if (items[i].quality > 0) {
-                            if (!items[i].name.equals(sulfuras)) {
-                              //  items[i].quality = items[i].quality - 1;
-                                updateQualityOtherItems(items[i]);
-                            }
-                        }
-                    } 
-                } 
             }
         }
     }

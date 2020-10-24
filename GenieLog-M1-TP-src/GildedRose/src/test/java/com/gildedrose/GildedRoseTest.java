@@ -91,6 +91,20 @@ class GildedRoseTest{
         assertThat(app.items[0].sellIn, is( expectedSellIn )) ;
     }
 
+    @Test
+    void qualitywhenSellIn0() {
+                
+        // name, sellIn, quality
+        Item[] items = new Item[] { new Item("Elixir of the Mongoose", 0, 2) };
+        GildedRose app = new GildedRose(items);
+        int expectedQuality = 2-2;
+        int expectedSellIn= 0-1;
+        app.updateQuality();
+
+        assertThat(app.items[0].quality, is( expectedQuality )) ;
+        assertThat(app.items[0].sellIn, is( expectedSellIn )) ;
+    }
+
     /*#################################### Fin Ordinare Item #################################*/
 
     /*##################################### Aged Brie #################################*/
