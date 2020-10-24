@@ -19,6 +19,7 @@ class GildedRose {
 
         for (Item item : items) {
             
+            updateSellin( item );
             switch(item.name) {
                 case sulfuras:
                     break;
@@ -65,7 +66,6 @@ class GildedRose {
 
     private void updateAgedBrie(Item agedBrie ){
         updateQuality(agedBrie);
-        updateSellin( agedBrie );
         if(sellInUnder0(agedBrie)){
             updateQuality(agedBrie);
         }
@@ -73,7 +73,6 @@ class GildedRose {
 
     private void updateBackstage(Item backstage ){
         updateQuality(backstage);
-        updateSellin(backstage);
         if (backstage.sellIn < 11) { updateQuality(backstage); }
         if (backstage.sellIn < 6) { updateQuality(backstage); }
         if (sellInUnder0(backstage)) { setQualityTo0(backstage); }
@@ -81,7 +80,6 @@ class GildedRose {
 
     private void updateOtherItems( Item item){
         updateQualityOtherItems(item);
-        updateSellin(item);
         if (sellInUnder0(item)){
             updateQualityOtherItems(item);
         }
