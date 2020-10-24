@@ -74,6 +74,47 @@ class GildedRoseTest{
         assertThat(app.items[0].quality, is( expectedQuality ));
     }
 
+    //La qualité (`quality`) d'un produit ne peut jamais être négative.
+    @Test
+    void testNegativeQuality() {
+                
+        // name, sellIn, quality
+        Item[] items = new Item[] { new Item("Elixir of the Mongoose", 5, 0) };
+        GildedRose app = new GildedRose(items);
+        int expectedQuality = 0;
+        app.updateQuality();
+
+        assertThat(app.items[0].quality, is( expectedQuality )) ;
+    }
+
+    //- Une fois que la date de péremption est passée, la qualité se dégrade deux fois plus rapidement.
+    @Test
+    void qualitywhensellinisnegativ() {
+                
+        // name, sellIn, quality
+        Item[] items = new Item[] { new Item("Elixir of the Mongoose", -2, 20) };
+        GildedRose app = new GildedRose(items);
+        int expectedQuality = 20-2;
+        app.updateQuality();
+
+        assertThat(app.items[0].quality, is( expectedQuality )) ;
+    }
+
+    //- Une fois que la date de péremption est passée, la qualité se dégrade deux fois plus rapidement.
+    @Test
+    void sellInywhensellinisnegativ() {
+                
+        // name, sellIn, quality
+        Item[] items = new Item[] { new Item("Elixir of the Mongoose", -2, 20) };
+        GildedRose app = new GildedRose(items);
+        int expectedSellIn= -2 -1;
+        app.updateQuality();
+
+        assertThat(app.items[0].sellIn, is( expectedSellIn )) ;
+    }
+
+    /*#################################### Fin Ordinare Item #################################*/
+
     /*##################################### Aged Brie #################################*/
 
     //"Aged Brie" augmente sa qualité (`quality`) plus le temps passe.
@@ -154,44 +195,8 @@ class GildedRoseTest{
     //################ fin aged brie ##########################"/
 
 
-    //La qualité (`quality`) d'un produit ne peut jamais être négative.
-    @Test
-    void testNegativeQuality() {
-                
-        // name, sellIn, quality
-        Item[] items = new Item[] { new Item("Elixir of the Mongoose", 5, 0) };
-        GildedRose app = new GildedRose(items);
-        int expectedQuality = 0;
-        app.updateQuality();
-
-        assertThat(app.items[0].quality, is( expectedQuality )) ;
-    }
-
-    //- Une fois que la date de péremption est passée, la qualité se dégrade deux fois plus rapidement.
-    @Test
-    void qualitywhensellinisnegativ() {
-                
-        // name, sellIn, quality
-        Item[] items = new Item[] { new Item("Elixir of the Mongoose", -2, 20) };
-        GildedRose app = new GildedRose(items);
-        int expectedQuality = 20-2;
-        app.updateQuality();
-
-        assertThat(app.items[0].quality, is( expectedQuality )) ;
-    }
-
-    //- Une fois que la date de péremption est passée, la qualité se dégrade deux fois plus rapidement.
-    @Test
-    void sellInywhensellinisnegativ() {
-                
-        // name, sellIn, quality
-        Item[] items = new Item[] { new Item("Elixir of the Mongoose", -2, 20) };
-        GildedRose app = new GildedRose(items);
-        int expectedSellIn= -2 -1;
-        app.updateQuality();
-
-        assertThat(app.items[0].sellIn, is( expectedSellIn )) ;
-    }
+    
+    //################ Backstage testes ##########################"/
     
     //- La qualité d'un produit n'est jamais de plus de 50.
     @Test
@@ -207,54 +212,6 @@ class GildedRoseTest{
         assertThat(app.items[0].sellIn, is( 4)) ;
 
     }
-
-    /*##################################### Sulfuras #################################*/
-    
-    //"Sulfuras", étant un objet légendaire, n'a pas de date de péremption et ne perd jamais en qualité (`quality`)
-    //Juste une précision, un produit ne peut jamais voir sa qualité augmenter au-dessus de 50, cependant "Sulfuras" est un objet légendaire et comme tel sa qualité est de 80 et il ne change jamais.
-
-    @Test
-    void qualitySulfuras() {
-                
-        // name, sellIn, quality
-        Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", 0, 80) };
-        GildedRose app = new GildedRose(items);
-        int expectedQuality= 80;
-        app.updateQuality();
-
-        assertThat(app.items[0].quality, is( expectedQuality)) ;
-        assertThat(app.items[0].sellIn, is( app.items[0].sellIn)) ;
-
-    }
-
-
-    @Test
-    void qualitySulfurasWithNegativeSellIn() {
-                
-        // name, sellIn, quality
-        Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", -5, 20) };
-        GildedRose app = new GildedRose(items);
-        int expectedQuality= 20;
-        app.updateQuality();
-
-        assertThat(app.items[0].quality, is( expectedQuality)) ;
-        assertThat(app.items[0].sellIn, is( app.items[0].sellIn)) ;
-
-    }
-   // @Test
-  /*  void test1() {
-                
-        // name, sellIn, quality
-        Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", 4, 20) };
-        GildedRose app = new GildedRose(items);
-        int expectedQuality= 20;
-        app.updateQuality();
-
-        assertThat(app.items[0].quality, is( expectedQuality)) ;
-        assertThat(app.items[0].sellIn, is( 3)) ;
-
-    }
-    */
 
     //"Backstage passes", comme le "Aged Brie", augmente sa qualité (`quality`) plus le temps passe (`sellIn`) ; La qualité augmente de 2 quand il reste 10 jours ou moins et de 3 quand il reste 5 jours ou moins, mais la qualité tombe à 0 après le concert.
     @Test
@@ -285,6 +242,8 @@ class GildedRoseTest{
         assertThat(app.items[0].sellIn, is( 14)) ;
 
     }
+
+
 
     //"Backstage passes", comme le "Aged Brie", augmente sa qualité (`quality`) plus le temps passe (`sellIn`) ; La qualité augmente de 2 quand il reste 10 jours ou moins et de 3 quand il reste 5 jours ou moins, mais la qualité tombe à 0 après le concert.
     @Test
@@ -348,6 +307,60 @@ class GildedRoseTest{
         assertThat(app.items[0].sellIn, is( 3)) ;
 
     }
+    
+    //################ end Backstage testes ##########################"/
+
+    /*################ Sulfuras testes ######################################*/
+    
+    //"Sulfuras", étant un objet légendaire, n'a pas de date de péremption et ne perd jamais en qualité (`quality`)
+    //Juste une précision, un produit ne peut jamais voir sa qualité augmenter au-dessus de 50, cependant "Sulfuras" est un objet légendaire et comme tel sa qualité est de 80 et il ne change jamais.
+
+    @Test
+    void qualitySulfuras() {
+                
+        // name, sellIn, quality
+        Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", 0, 80) };
+        GildedRose app = new GildedRose(items);
+        int expectedQuality= 80;
+        app.updateQuality();
+
+        assertThat(app.items[0].quality, is( expectedQuality)) ;
+        assertThat(app.items[0].sellIn, is( app.items[0].sellIn)) ;
+
+    }
+
+
+    @Test
+    void qualitySulfurasWithNegativeSellIn() {
+                
+        // name, sellIn, quality
+        Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", -5, 20) };
+        GildedRose app = new GildedRose(items);
+        int expectedQuality= 20;
+        app.updateQuality();
+
+        assertThat(app.items[0].quality, is( expectedQuality)) ;
+        assertThat(app.items[0].sellIn, is( app.items[0].sellIn)) ;
+
+    }
+   // @Test
+  /*  void test1() {
+                
+        // name, sellIn, quality
+        Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", 4, 20) };
+        GildedRose app = new GildedRose(items);
+        int expectedQuality= 20;
+        app.updateQuality();
+
+        assertThat(app.items[0].quality, is( expectedQuality)) ;
+        assertThat(app.items[0].sellIn, is( 3)) ;
+
+    }
+    */
+
+    /*################ End Sulfuras testes ######################################*/
+
+    
 
     /*
     marche pas encore
