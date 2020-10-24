@@ -11,7 +11,6 @@ class GildedRose {
     public static final int qualityMaximumValue = 50;
     public static final int qualityMinimumValue =  0;
 
-
     public GildedRose(Item[] items) {
         this.items = items;
     }
@@ -19,14 +18,22 @@ class GildedRose {
     public void updateQuality() {
 
         for (Item item : items) {
-
-            if( item.name.equals(sulfuras)){ continue; }
-            else if( item.name.equals(agedBrie)){ updateAgedBrie(item); }
-            else if (item.name.equals(backstage)){ updateBackstage(item); }
-            else{ updateOtherItems(item); }
+            
+            switch(item.name) {
+                case sulfuras:
+                    break;
+                case agedBrie:
+                    updateAgedBrie(item);
+                    break;
+                case backstage:
+                    updateBackstage(item);
+                    break;
+                default:
+                    updateOtherItems(item); 
+            }
+              
         }
     }
-
 
     private void updateQuality( Item item ) {
         if(qualityUnderMaxValue(item)){
@@ -79,6 +86,4 @@ class GildedRose {
             updateQualityOtherItems(item);
         }
     }
-
- 
 }
