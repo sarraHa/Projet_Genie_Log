@@ -5,8 +5,8 @@ class GildedRose {
 
     public static final String agedBrie = "Aged Brie";
     public static final String backstage = "Backstage passes to a TAFKAL80ETC concert";
-    public static final String conjured = "Conjured Mana Cake";
     public static final String sulfuras = "Sulfuras, Hand of Ragnaros";
+    public static final String conjured = "Conjured Mana Cake";
 
 
     public GildedRose(Item[] items) {
@@ -66,6 +66,9 @@ class GildedRose {
 
 
 
+    private void UpdateOtherItems( Item item){
+
+    }
 
     public void updateQuality() {
 
