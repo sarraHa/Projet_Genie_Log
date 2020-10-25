@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-class AgedBrie {
+class AgedBrie extends GildedRoseItems {
     Item agedBrie ; 
     public static final int qualityMaximumValue = 50;
 

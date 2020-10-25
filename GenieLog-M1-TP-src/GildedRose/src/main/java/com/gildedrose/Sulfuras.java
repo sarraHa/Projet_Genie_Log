@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-class Sulfuras {
+class Sulfuras extends GildedRoseItems{
 
     Item sulfuras ; 
 

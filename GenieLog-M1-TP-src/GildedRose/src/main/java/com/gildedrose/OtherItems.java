@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-class OtherItems {
+class OtherItems extends GildedRoseItems {
 
     Item item ; 
     public static final int qualityMinimumValue =  0;

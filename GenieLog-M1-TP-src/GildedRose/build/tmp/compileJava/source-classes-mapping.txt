@@ -8,6 +8,8 @@ com/gildedrose/Sulfuras.java
  com.gildedrose.Sulfuras
 com/gildedrose/Conjured.java
  com.gildedrose.Conjured
+com/gildedrose/GildedRoseItems.java
+ com.gildedrose.GildedRoseItems
 com/gildedrose/GildedRose.java
  com.gildedrose.GildedRose
 com/gildedrose/Item.java

@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-class Conjured {
+class Conjured extends GildedRoseItems{
 
     Item conjured ; 
     public static final int qualityMinimumValue =  0;

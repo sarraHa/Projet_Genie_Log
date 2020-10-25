@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-class Backstage {
+class Backstage extends GildedRoseItems {
     Item backstage ; 
     public static final int qualityMaximumValue = 50;
 
