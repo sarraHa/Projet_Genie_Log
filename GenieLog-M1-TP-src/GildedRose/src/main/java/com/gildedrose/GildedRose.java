@@ -26,7 +26,6 @@ class GildedRose {
                 case agedBrie:
                     AgedBrie agedBrie = new AgedBrie(item);
                     agedBrie.updateAgedBrie();
-                    //updateAgedBrie(item);
                     break;
                 case backstage:
                     updateBackstage(item);
