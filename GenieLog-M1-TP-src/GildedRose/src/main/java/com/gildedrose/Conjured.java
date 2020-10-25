@@ -8,15 +8,6 @@ class Conjured extends GildedRoseItems{
         this.conjured = item; 
     }
 
-    /*----->
-    private void updateQualityOtherItems( Item item ) {
-        if (item.quality > qualityMinimumValue) {
-            item.quality = item.quality - 1;
-        }
-    }
-
-    ------>*/
-
     @Override
     protected void updateQuality( Item item ) {
         if (item.quality > qualityMinimumValue) {
@@ -24,7 +15,8 @@ class Conjured extends GildedRoseItems{
         }
     }
 
-    public void updateConjured(){
+    @Override
+    protected void update( Item item){
         updateQuality(this.conjured);
         if (sellInUnder0(this.conjured)){
             updateQuality(this.conjured);

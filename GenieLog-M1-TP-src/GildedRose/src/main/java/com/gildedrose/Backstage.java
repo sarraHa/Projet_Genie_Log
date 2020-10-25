@@ -7,7 +7,8 @@ class Backstage extends GildedRoseItems {
         this.backstage = item; 
     }
 
-    public void updateBackstage(){
+    @Override
+    protected void update( Item item){
         updateQuality(backstage);
         if (this.backstage.sellIn < 11) { updateQuality(this.backstage); }
         if (this.backstage.sellIn < 6) { updateQuality(this.backstage); }

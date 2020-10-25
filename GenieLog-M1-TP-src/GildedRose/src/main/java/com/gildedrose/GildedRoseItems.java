@@ -23,8 +23,16 @@ public abstract class GildedRoseItems {
             item.quality = item.quality + 1;        
         }
     }
-    
-    protected void setQualityTo0(Item backstage){
+
+    protected void setQualityTo0(Item backstage) {
         backstage.quality = backstage.quality - backstage.quality;
     }
+
+    protected void update( Item item) {
+        updateQuality(item);
+        if(sellInUnder0(item)){
+            updateQuality(item);
+        }
+    }
+    
 }

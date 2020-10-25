@@ -8,16 +8,18 @@ class OtherItems extends GildedRoseItems {
         this.item = item;
     }
 
-    private void updateQualityOtherItems( Item item ) {
+    @Override
+    protected void updateQuality( Item item ) {
         if (item.quality > qualityMinimumValue) {
             item.quality = item.quality - 1;
         }
     }
 
-    public void updateOtherItems(){
-        updateQualityOtherItems(this.item);
+    @Override
+    protected void update(Item item){
+        updateQuality(this.item);
         if (sellInUnder0(this.item)){
-            updateQualityOtherItems(this.item);
+            updateQuality(this.item);
         }
     }
 

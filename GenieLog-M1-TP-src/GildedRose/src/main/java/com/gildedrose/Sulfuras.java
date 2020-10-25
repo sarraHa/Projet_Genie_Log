@@ -8,6 +8,10 @@ class Sulfuras extends GildedRoseItems{
         this.sulfuras = item;
     }
 
+    @Override
+    protected void update(Item item){
+        
+    }
 
     
 }

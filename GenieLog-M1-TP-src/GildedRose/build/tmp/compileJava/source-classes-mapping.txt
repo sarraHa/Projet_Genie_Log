@@ -6,11 +6,11 @@ com/gildedrose/AgedBrie.java
  com.gildedrose.AgedBrie
 com/gildedrose/Sulfuras.java
  com.gildedrose.Sulfuras
-com/gildedrose/Item.java
- com.gildedrose.Item
-com/gildedrose/GildedRoseItems.java
- com.gildedrose.GildedRoseItems
 com/gildedrose/Conjured.java
  com.gildedrose.Conjured
+com/gildedrose/GildedRoseItems.java
+ com.gildedrose.GildedRoseItems
 com/gildedrose/GildedRose.java
  com.gildedrose.GildedRose
+com/gildedrose/Item.java
+ com.gildedrose.Item
