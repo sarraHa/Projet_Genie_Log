@@ -1,10 +1,12 @@
 package com.gildedrose;
 
 class AgedBrie {
-
-
+    Item agedBrie ; 
     public static final int qualityMaximumValue = 50;
 
+    AgedBrie(Item item){
+        this.agedBrie = item; 
+    }
 
     private void updateQuality( Item item ) {
         if(qualityUnderMaxValue(item)){
@@ -20,13 +22,10 @@ class AgedBrie {
         return item.sellIn < 0;
     }
 
-    private void updateAgedBrie(Item agedBrie ){
-        updateQuality(agedBrie);
-        if(sellInUnder0(agedBrie)){
-            updateQuality(agedBrie);
+    public void updateAgedBrie( ){
+        updateQuality(this.agedBrie);
+        if(sellInUnder0(this.agedBrie)){
+            updateQuality(this.agedBrie);
         }
     }
-
-
-
 }
