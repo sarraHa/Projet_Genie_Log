@@ -32,7 +32,9 @@ class GildedRose {
                     backstage.updateBackstage();
                     break;
                 case conjured:
-                    updateConjured(item);
+                    Conjured conjured = new Conjured(item);
+                    conjured.updateConjured();
+                    //updateConjured(item);
                     break;
                 default:
                     updateOtherItems(item); 
@@ -75,10 +77,5 @@ class GildedRose {
             updateQualityOtherItems(item);
         }
     }
-
-    private void updateConjured( Item conjured){
-        updateOtherItems(conjured);
-        updateQualityOtherItems(conjured);
-    }
-
+    
 }
