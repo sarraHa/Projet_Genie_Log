@@ -8,9 +8,6 @@ class GildedRose {
     public static final String sulfuras = "Sulfuras, Hand of Ragnaros";
     public static final String conjured = "Conjured Mana Cake";
 
-    public static final int qualityMaximumValue = 50;
-    public static final int qualityMinimumValue =  0;
-
     public GildedRose(Item[] items) {
         this.items = items;
     }
@@ -23,8 +20,7 @@ class GildedRose {
             getItemByName(item);
         }
     }
-    
-    
+
     private GildedRoseItems getItemByName(Item item){
         switch(item.name) {
             case sulfuras:

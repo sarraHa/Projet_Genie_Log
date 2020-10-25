@@ -3,8 +3,6 @@ package com.gildedrose;
 class OtherItems extends GildedRoseItems {
 
     Item item ; 
-    public static final int qualityMinimumValue =  0;
-
 
     OtherItems(Item item){
         this.item = item;

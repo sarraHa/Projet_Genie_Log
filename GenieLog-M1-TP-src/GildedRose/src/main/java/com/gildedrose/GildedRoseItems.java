@@ -5,7 +5,7 @@ public abstract class GildedRoseItems {
 
     public static final int qualityMaximumValue = 50;
     public static final int qualityMinimumValue =  0;
-    
+
     GildedRoseItems(){
 
     }
@@ -14,7 +14,7 @@ public abstract class GildedRoseItems {
         return item.sellIn < 0;
     }
 
-    private boolean qualityUnderMaxValue( Item item ) {
+    protected boolean qualityUnderMaxValue( Item item ) {
         return item.quality < qualityMaximumValue;
     }
 
@@ -23,5 +23,8 @@ public abstract class GildedRoseItems {
             item.quality = item.quality + 1;        
         }
     }
-
+    
+    protected void setQualityTo0(Item backstage){
+        backstage.quality = backstage.quality - backstage.quality;
+    }
 }
