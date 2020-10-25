@@ -6,7 +6,6 @@ class AgedBrie {
     public static final int qualityMaximumValue = 50;
 
 
-    
     private void updateQuality( Item item ) {
         if(qualityUnderMaxValue(item)){
             item.quality = item.quality + 1;        
