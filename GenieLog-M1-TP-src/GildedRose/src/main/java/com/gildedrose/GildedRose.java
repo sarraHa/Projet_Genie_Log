@@ -22,6 +22,7 @@ class GildedRose {
             updateSellin( item );
             switch(item.name) {
                 case sulfuras:
+                    Sulfuras sulfuras = new Sulfuras(item);
                     break;
                 case agedBrie:
                     AgedBrie agedBrie = new AgedBrie(item);
@@ -34,48 +35,17 @@ class GildedRose {
                 case conjured:
                     Conjured conjured = new Conjured(item);
                     conjured.updateConjured();
-                    //updateConjured(item);
                     break;
                 default:
-                    updateOtherItems(item); 
+                    OtherItems otherItems = new OtherItems(item);
+                    otherItems.updateOtherItems();
             }
               
         }
     }
-
-    private void updateQuality( Item item ) {
-        if(qualityUnderMaxValue(item)){
-            item.quality = item.quality + 1;        
-        }
-    }
-
-    private void updateQualityOtherItems( Item item ) {
-        if (item.quality > qualityMinimumValue) {
-            item.quality = item.quality - 1;
-        }
-    }
-
+  
     private void updateSellin( Item item ) {
         item.sellIn = item.sellIn - 1;
     }
 
-    private boolean qualityUnderMaxValue( Item item ) {
-        return item.quality < qualityMaximumValue;
-    }
-
-    private boolean sellInUnder0( Item item ) {
-        return item.sellIn < 0;
-    }
-
-    private void setQualityTo0(Item backstage){
-        backstage.quality = backstage.quality - backstage.quality;
-    }
-
-    private void updateOtherItems( Item item){
-        updateQualityOtherItems(item);
-        if (sellInUnder0(item)){
-            updateQualityOtherItems(item);
-        }
-    }
-    
 }
