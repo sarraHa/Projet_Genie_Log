@@ -24,6 +24,7 @@ class GildedRose {
         }
     }
     
+    
     private GildedRoseItems getItemByName(Item item){
         switch(item.name) {
             case sulfuras:
