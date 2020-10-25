@@ -15,8 +15,6 @@ class GildedRose {
     public void updateQuality() {
 
         for (Item item : items) {
-            
-            //updateSellin( item );
             GildedRoseItems gildedRoseItem = getItemByName(item);
             gildedRoseItem.update(item);
         }
@@ -41,10 +39,5 @@ class GildedRose {
                 return otherItems;
         }
     }
-
-
- //   private void updateSellin( Item item ) {
-   //     item.sellIn = item.sellIn - 1;
-    //}
 
 }
