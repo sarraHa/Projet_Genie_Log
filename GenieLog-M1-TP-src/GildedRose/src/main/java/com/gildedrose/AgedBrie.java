@@ -7,15 +7,4 @@ class AgedBrie extends GildedRoseItems {
         this.agedBrie = item; 
     }
 
-    /* ---->
-    public void updateAgedBrie( ){
-        updateQuality(this.agedBrie);
-        if(sellInUnder0(this.agedBrie)){
-            updateQuality(this.agedBrie);
-        }
-    }
-    *-------->*/
-    
-    
-
 }

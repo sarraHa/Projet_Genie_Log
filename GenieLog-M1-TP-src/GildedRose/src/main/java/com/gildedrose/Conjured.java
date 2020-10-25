@@ -17,11 +17,11 @@ class Conjured extends GildedRoseItems{
 
     @Override
     protected void update( Item item){
-        updateQuality(this.conjured);
-        if (sellInUnder0(this.conjured)){
-            updateQuality(this.conjured);
+        updateQuality(item);
+        if (sellInUnder0(item)){
+            updateQuality(item);
         }
-        updateQuality(this.conjured);
+        updateQuality(item);
     }
 
 }

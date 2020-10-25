@@ -9,8 +9,7 @@ class Sulfuras extends GildedRoseItems{
     }
 
     @Override
-    protected void update(Item item){
-        
+    protected void update(Item item){    
     }
 
     

@@ -9,10 +9,10 @@ class Backstage extends GildedRoseItems {
 
     @Override
     protected void update( Item item){
-        updateQuality(backstage);
-        if (this.backstage.sellIn < 11) { updateQuality(this.backstage); }
-        if (this.backstage.sellIn < 6) { updateQuality(this.backstage); }
-        if (sellInUnder0(this.backstage)) { setQualityTo0(this.backstage); }
+        updateQuality(item);
+        if (item.sellIn < 11) { updateQuality(item); }
+        if (item.sellIn < 6) { updateQuality(item); }
+        if (sellInUnder0(item)) { setQualityTo0(item); }
     }
 
 }

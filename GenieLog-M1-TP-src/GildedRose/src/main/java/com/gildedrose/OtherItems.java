@@ -17,9 +17,9 @@ class OtherItems extends GildedRoseItems {
 
     @Override
     protected void update(Item item){
-        updateQuality(this.item);
-        if (sellInUnder0(this.item)){
-            updateQuality(this.item);
+        updateQuality(item);
+        if (sellInUnder0(item)){
+            updateQuality(item);
         }
     }
 
