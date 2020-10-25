@@ -8,18 +8,8 @@ class AgedBrie extends GildedRoseItems {
         this.agedBrie = item; 
     }
 
-    private void updateQuality( Item item ) {
-        if(qualityUnderMaxValue(item)){
-            item.quality = item.quality + 1;        
-        }
-    }
-
     private boolean qualityUnderMaxValue( Item item ) {
         return item.quality < qualityMaximumValue;
-    }
-
-    private boolean sellInUnder0( Item item ) {
-        return item.sellIn < 0;
     }
 
     public void updateAgedBrie( ){

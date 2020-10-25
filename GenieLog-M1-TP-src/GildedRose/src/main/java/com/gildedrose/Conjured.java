@@ -9,10 +9,6 @@ class Conjured extends GildedRoseItems{
         this.conjured = item; 
     }
 
-    private boolean sellInUnder0( Item item ) {
-        return item.sellIn < 0;
-    }
-
     private void updateQualityOtherItems( Item item ) {
         if (item.quality > qualityMinimumValue) {
             item.quality = item.quality - 1;

@@ -16,10 +16,6 @@ class OtherItems extends GildedRoseItems {
         }
     }
 
-    private boolean sellInUnder0( Item item ) {
-        return item.sellIn < 0;
-    }
-
     public void updateOtherItems(){
         updateQualityOtherItems(this.item);
         if (sellInUnder0(this.item)){

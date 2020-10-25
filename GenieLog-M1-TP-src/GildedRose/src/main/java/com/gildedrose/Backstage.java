@@ -13,16 +13,6 @@ class Backstage extends GildedRoseItems {
         return item.quality < qualityMaximumValue;
     }
 
-    private void updateQuality( Item item ) {
-        if(qualityUnderMaxValue(item)){
-            item.quality = item.quality + 1;        
-        }
-    }
-
-    private boolean sellInUnder0( Item item ) {
-        return item.sellIn < 0;
-    }
-
     private void setQualityTo0(Item backstage){
         backstage.quality = backstage.quality - backstage.quality;
     }
