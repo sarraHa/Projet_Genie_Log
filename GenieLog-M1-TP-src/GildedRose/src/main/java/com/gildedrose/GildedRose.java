@@ -20,28 +20,6 @@ class GildedRose {
         for (Item item : items) {
             
             updateSellin( item );
-
-     /*---->       switch(item.name) {
-                case sulfuras:
-                    Sulfuras sulfuras = new Sulfuras(item);
-                    break;
-                case agedBrie:
-                    AgedBrie agedBrie = new AgedBrie(item);
-                    agedBrie.updateAgedBrie();
-                    break;
-                case backstage:
-                    Backstage backstage = new Backstage(item);
-                    backstage.updateBackstage();
-                    break;
-                case conjured:
-                    Conjured conjured = new Conjured(item);
-                    conjured.updateConjured();
-                    break;
-                default:
-                    OtherItems otherItems = new OtherItems(item);
-                    otherItems.updateOtherItems();
-            }    ------->*/
-
             getItemByName(item);
         }
     }
