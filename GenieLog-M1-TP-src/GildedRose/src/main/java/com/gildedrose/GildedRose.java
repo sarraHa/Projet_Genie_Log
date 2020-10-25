@@ -16,7 +16,7 @@ class GildedRose {
 
         for (Item item : items) {
             
-            updateSellin( item );
+            //updateSellin( item );
             GildedRoseItems gildedRoseItem = getItemByName(item);
             gildedRoseItem.update(item);
         }
@@ -29,26 +29,22 @@ class GildedRose {
                 return sulfuras;
             case agedBrie:
                 AgedBrie agedBrie = new AgedBrie(item);
-            //    agedBrie.update( );
                 return agedBrie;
             case backstage:
                 Backstage backstage = new Backstage(item);
-           //     backstage.updateBackstage();
                 return backstage;
             case conjured:
                 Conjured conjured = new Conjured(item);
-             //   conjured.updateConjured();
                 return conjured;
             default:
                 OtherItems otherItems = new OtherItems(item);
-               // otherItems.updateOtherItems();
                 return otherItems;
         }
     }
 
 
-    private void updateSellin( Item item ) {
-        item.sellIn = item.sellIn - 1;
-    }
+ //   private void updateSellin( Item item ) {
+   //     item.sellIn = item.sellIn - 1;
+    //}
 
 }

@@ -10,6 +10,10 @@ public abstract class GildedRoseItems {
 
     }
 
+    protected void updateSellin( Item item ) {
+        item.sellIn = item.sellIn - 1;
+    }
+
     protected boolean sellInUnder0( Item item ) {
         return item.sellIn < 0;
     }
@@ -29,6 +33,7 @@ public abstract class GildedRoseItems {
     }
 
     protected void update( Item item) {
+        updateSellin(item);
         updateQuality(item);
         if(sellInUnder0(item)){
             updateQuality(item);
