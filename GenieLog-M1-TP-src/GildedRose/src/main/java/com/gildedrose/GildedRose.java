@@ -28,7 +28,9 @@ class GildedRose {
                     agedBrie.updateAgedBrie();
                     break;
                 case backstage:
-                    updateBackstage(item);
+                    Backstage backstage = new Backstage(item);
+                    backstage.updateBackstage();
+                    //updateBackstage(item);
                     break;
                 case conjured:
                     updateConjured(item);
@@ -66,13 +68,6 @@ class GildedRose {
 
     private void setQualityTo0(Item backstage){
         backstage.quality = backstage.quality - backstage.quality;
-    }
-
-    private void updateAgedBrie(Item agedBrie ){
-        updateQuality(agedBrie);
-        if(sellInUnder0(agedBrie)){
-            updateQuality(agedBrie);
-        }
     }
 
     private void updateBackstage(Item backstage ){
