@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gildedrose.OtherItemsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-11-14T15:29:12" hostname="bsarra-S551LB" time="0.027">
+<testsuite name="com.gildedrose.OtherItemsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-11-14T15:45:15" hostname="bsarra-S551LB" time="0.007">
   <properties/>
   <testcase name="qualitywhenSellIn0()" classname="com.gildedrose.OtherItemsTest" time="0.001"/>
-  <testcase name="qualitywhensellinisnegativ()" classname="com.gildedrose.OtherItemsTest" time="0.001"/>
-  <testcase name="sellInProduitOrdinaire()" classname="com.gildedrose.OtherItemsTest" time="0.008"/>
-  <testcase name="testNegativeQuality()" classname="com.gildedrose.OtherItemsTest" time="0.001"/>
-  <testcase name="ordinaryItemWithNegativeSellInAndNegativeQuality()" classname="com.gildedrose.OtherItemsTest" time="0.0"/>
+  <testcase name="qualitywhensellinisnegativ()" classname="com.gildedrose.OtherItemsTest" time="0.0"/>
+  <testcase name="sellInProduitOrdinaire()" classname="com.gildedrose.OtherItemsTest" time="0.001"/>
+  <testcase name="testNegativeQuality()" classname="com.gildedrose.OtherItemsTest" time="0.0"/>
+  <testcase name="ordinaryItemWithNegativeSellInAndNegativeQuality()" classname="com.gildedrose.OtherItemsTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
