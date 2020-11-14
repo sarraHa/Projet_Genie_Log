@@ -1,4 +1,6 @@
 com/gildedrose/TexttestFixture.java
  com.gildedrose.TexttestFixture
+com/gildedrose/ItemTest.java
+ com.gildedrose.ItemTest
 com/gildedrose/GildedRoseTest.java
  com.gildedrose.GildedRoseTest

@@ -23,19 +23,19 @@ class GildedRose {
     private GildedRoseItems getItemByName(Item item){
 <span class="fc bfc" id="L24" title="All 5 branches covered.">        switch(item.name) {</span>
             case sulfuras:
-<span class="fc" id="L26">                Sulfuras sulfuras = new Sulfuras(item);</span>
+<span class="fc" id="L26">                Sulfuras sulfuras = new Sulfuras();</span>
 <span class="fc" id="L27">                return sulfuras;</span>
             case agedBrie:
-<span class="fc" id="L29">                AgedBrie agedBrie = new AgedBrie(item);</span>
+<span class="fc" id="L29">                AgedBrie agedBrie = new AgedBrie();</span>
 <span class="fc" id="L30">                return agedBrie;</span>
             case backstage:
-<span class="fc" id="L32">                Backstage backstage = new Backstage(item);</span>
+<span class="fc" id="L32">                Backstage backstage = new Backstage();</span>
 <span class="fc" id="L33">                return backstage;</span>
             case conjured:
-<span class="fc" id="L35">                Conjured conjured = new Conjured(item);</span>
+<span class="fc" id="L35">                Conjured conjured = new Conjured();</span>
 <span class="fc" id="L36">                return conjured;</span>
             default:
-<span class="fc" id="L38">                OtherItems otherItems = new OtherItems(item);</span>
+<span class="fc" id="L38">                OtherItems otherItems = new OtherItems();</span>
 <span class="fc" id="L39">                return otherItems;</span>
         }
     }

@@ -371,4 +371,33 @@ class GildedRoseTest{
         assertThat(app.items[0].sellIn, is( 3-1)) ;
 
     }
+
+    @Test
+    void qualityConjuredSellInUnder0() {
+                
+        // name, sellIn, quality
+        Item[] items = new Item[] { new Item("Conjured Mana Cake", 0, 7) };
+        GildedRose app = new GildedRose(items);
+        int expectedQuality = 7 - 2 - 1;
+        app.updateQuality();
+
+        assertThat(app.items[0].quality, is( expectedQuality)) ;
+        assertThat(app.items[0].sellIn, is( 0-1)) ;
+
+    }
+    
+    @Test
+    void qualityConjuredWhenUnder0() {
+                
+        // name, sellIn, quality
+        Item[] items = new Item[] { new Item("Conjured Mana Cake", 5, 0) };
+        GildedRose app = new GildedRose(items);
+        int expectedQuality = 0;
+        app.updateQuality();
+
+        assertThat(app.items[0].quality, is( expectedQuality)) ;
+        assertThat(app.items[0].sellIn, is( 5-1)) ;
+
+    }
+
 }
