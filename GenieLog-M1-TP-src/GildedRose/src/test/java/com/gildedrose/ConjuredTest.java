@@ -6,17 +6,8 @@ import static org.hamcrest.Matchers.*;
 
 class ConjuredTest{
 
-
-
- /*################ Conjured testes ######################################*/
-
-    
-    //marche pas encore
-    //- les éléments "Conjured" voient leur qualité se dégrader de deux fois plus vite que les objets normaux.
     @Test
-    void qualityConjured() {
-                
-        // name, sellIn, quality
+    void qualityDegradesTwiceAsMuch() {                
         Item[] items = new Item[] { new Item("Conjured Mana Cake", 3, 6) };
         GildedRose app = new GildedRose(items);
         int expectedQuality = 6 - 2;
@@ -24,13 +15,10 @@ class ConjuredTest{
 
         assertThat(app.items[0].quality, is( expectedQuality)) ;
         assertThat(app.items[0].sellIn, is( 3-1)) ;
-
     }
 
     @Test
-    void qualityConjuredSellInUnder0() {
-                
-        // name, sellIn, quality
+    void qualityWhenSellInUnder0() {              
         Item[] items = new Item[] { new Item("Conjured Mana Cake", 0, 7) };
         GildedRose app = new GildedRose(items);
         int expectedQuality = 7 - 2 - 1;
@@ -38,13 +26,10 @@ class ConjuredTest{
 
         assertThat(app.items[0].quality, is( expectedQuality)) ;
         assertThat(app.items[0].sellIn, is( 0-1)) ;
-
     }
     
     @Test
-    void qualityConjuredWhenUnder0() {
-                
-        // name, sellIn, quality
+    void qualityWhenUnder0() {                
         Item[] items = new Item[] { new Item("Conjured Mana Cake", 5, 0) };
         GildedRose app = new GildedRose(items);
         int expectedQuality = 0;
@@ -52,8 +37,5 @@ class ConjuredTest{
 
         assertThat(app.items[0].quality, is( expectedQuality)) ;
         assertThat(app.items[0].sellIn, is( 5-1)) ;
-
     }
-
-
 }
