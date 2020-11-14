@@ -2,8 +2,8 @@ com/gildedrose/TexttestFixture.java
  com.gildedrose.TexttestFixture
 com/gildedrose/GildedRoseTest.java
  com.gildedrose.GildedRoseTest
-com/gildedrose/BackstageTest.java
- com.gildedrose.BackstageTest
+com/gildedrose/AgedBrieTest.java
+ com.gildedrose.AgedBrieTest
 com/gildedrose/ItemTest.java
  com.gildedrose.ItemTest
 com/gildedrose/SulfurasTest.java
@@ -12,5 +12,5 @@ com/gildedrose/ConjuredTest.java
  com.gildedrose.ConjuredTest
 com/gildedrose/OtherItemsTest.java
  com.gildedrose.OtherItemsTest
-com/gildedrose/AgedBrieTest.java
- com.gildedrose.AgedBrieTest
+com/gildedrose/BackstageTest.java
+ com.gildedrose.BackstageTest

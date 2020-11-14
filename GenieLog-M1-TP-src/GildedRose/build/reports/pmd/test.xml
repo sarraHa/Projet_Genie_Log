@@ -2,15 +2,15 @@
 <pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
-    version="6.21.0" timestamp="2020-11-14T20:39:02.265">
+    version="6.21.0" timestamp="2020-11-14T20:57:35.339">
 <file name="/home/bsarra/Documents/S1/Genie log/mon projet/GenieLog-M1-TP-src/GildedRose/src/test/java/com/gildedrose/AgedBrieTest.java">
 <violation beginline="11" endline="11" begincolumn="46" endcolumn="56" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="com.gildedrose" class="AgedBrieTest" method="increaseQuality" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
 The String literal &quot;Aged Brie&quot; appears 5 times in this file; the first occurrence is on line 11
 </violation>
 </file>
 <file name="/home/bsarra/Documents/S1/Genie log/mon projet/GenieLog-M1-TP-src/GildedRose/src/test/java/com/gildedrose/BackstageTest.java">
-<violation beginline="22" endline="22" begincolumn="46" endcolumn="88" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="com.gildedrose" class="BackstageTest" method="qualityNotsuperiorto50" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
-The String literal &quot;Backstage passes to a TAFKAL80ETC concert&quot; appears 7 times in this file; the first occurrence is on line 22
+<violation beginline="16" endline="16" begincolumn="46" endcolumn="88" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="com.gildedrose" class="BackstageTest" method="qualityNotsuperiorto50" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
+The String literal &quot;Backstage passes to a TAFKAL80ETC concert&quot; appears 6 times in this file; the first occurrence is on line 16
 </violation>
 </file>
 <file name="/home/bsarra/Documents/S1/Genie log/mon projet/GenieLog-M1-TP-src/GildedRose/src/test/java/com/gildedrose/OtherItemsTest.java">

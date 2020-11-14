@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gildedrose.ConjuredTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-11-14T19:39:06" hostname="bsarra-S551LB" time="0.096">
+<testsuite name="com.gildedrose.ConjuredTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-11-14T19:57:39" hostname="bsarra-S551LB" time="0.04">
   <properties/>
-  <testcase name="qualityConjuredSellInUnder0()" classname="com.gildedrose.ConjuredTest" time="0.079"/>
+  <testcase name="qualityConjuredSellInUnder0()" classname="com.gildedrose.ConjuredTest" time="0.032"/>
   <testcase name="qualityConjured()" classname="com.gildedrose.ConjuredTest" time="0.001"/>
-  <testcase name="qualityConjuredWhenUnder0()" classname="com.gildedrose.ConjuredTest" time="0.007"/>
+  <testcase name="qualityConjuredWhenUnder0()" classname="com.gildedrose.ConjuredTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

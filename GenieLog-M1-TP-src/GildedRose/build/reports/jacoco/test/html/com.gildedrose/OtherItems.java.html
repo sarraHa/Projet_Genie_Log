@@ -3,17 +3,17 @@
 <span class="fc" id="L3">class OtherItems extends GildedRoseItems {</span>
 
     @Override
-    protected void updateQuality( Item item ) {
-<span class="fc bfc" id="L7" title="All 2 branches covered.">        if (item.quality &gt; qualityMinimumValue) {</span>
+    protected void updateQuality(Item item) {
+<span class="fc bfc" id="L7" title="All 2 branches covered.">        if (item.quality &gt; QUALITYMINVALUE) {</span>
 <span class="fc" id="L8">            item.quality = item.quality - 1;</span>
         }
 <span class="fc" id="L10">    }</span>
 
     @Override
-    protected void update(Item item){
+    protected void update(Item item) {
 <span class="fc" id="L14">        updateSellin(item);</span>
 <span class="fc" id="L15">        updateQuality(item);</span>
-<span class="fc bfc" id="L16" title="All 2 branches covered.">        if (sellInUnder0(item)){</span>
+<span class="fc bfc" id="L16" title="All 2 branches covered.">        if (sellInUnder0(item)) {</span>
 <span class="fc" id="L17">            updateQuality(item);</span>
         }
 <span class="fc" id="L19">    }</span>
