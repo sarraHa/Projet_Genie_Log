@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GildedRose.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gilded-rose-kata</a> &gt; <a href="index.source.html" class="el_package">com.gildedrose</a> &gt; <span class="el_source">GildedRose.java</span></div><h1>GildedRose.java</h1><pre class="source lang-java linenums">package com.gildedrose;
+
+class GildedRose {
+    Item[] items;
+
+    public static final String agedBrie = &quot;Aged Brie&quot;;
+    public static final String backstage = &quot;Backstage passes to a TAFKAL80ETC concert&quot;;
+    public static final String sulfuras = &quot;Sulfuras, Hand of Ragnaros&quot;;
+    public static final String conjured = &quot;Conjured Mana Cake&quot;;
+
+    public static final int qualityMaximumValue = 50;
+    public static final int qualityMinimumValue =  0;
+
+<span class="fc" id="L14">    public GildedRose(Item[] items) {</span>
+<span class="fc" id="L15">        this.items = items;</span>
+<span class="fc" id="L16">    }</span>
+
+    public void updateQuality() {
+
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        for (Item item : items) {</span>
+            
+<span class="fc" id="L22">            updateSellin( item );</span>
+<span class="fc bfc" id="L23" title="All 5 branches covered.">            switch(item.name) {</span>
+                case sulfuras:
+<span class="fc" id="L25">                    break;</span>
+                case agedBrie:
+<span class="fc" id="L27">                    updateAgedBrie(item);</span>
+<span class="fc" id="L28">                    break;</span>
+                case backstage:
+<span class="fc" id="L30">                    updateBackstage(item);</span>
+<span class="fc" id="L31">                    break;</span>
+                case conjured:
+<span class="fc" id="L33">                    updateConjured(item);</span>
+<span class="fc" id="L34">                    break;</span>
+                default:
+<span class="fc" id="L36">                    updateOtherItems(item); </span>
+            }
+              
+        }
+<span class="fc" id="L40">    }</span>
+
+    private void updateQuality( Item item ) {
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        if(qualityUnderMaxValue(item)){</span>
+<span class="fc" id="L44">            item.quality = item.quality + 1;        </span>
+        }
+<span class="fc" id="L46">    }</span>
+
+    private void updateQualityOtherItems( Item item ) {
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        if (item.quality &gt; qualityMinimumValue) {</span>
+<span class="fc" id="L50">            item.quality = item.quality - 1;</span>
+        }
+<span class="fc" id="L52">    }</span>
+
+    private void updateSellin( Item item ) {
+<span class="fc" id="L55">        item.sellIn = item.sellIn - 1;</span>
+<span class="fc" id="L56">    }</span>
+
+    private boolean qualityUnderMaxValue( Item item ) {
+<span class="fc bfc" id="L59" title="All 2 branches covered.">        return item.quality &lt; qualityMaximumValue;</span>
+    }
+
+    private boolean sellInUnder0( Item item ) {
+<span class="fc bfc" id="L63" title="All 2 branches covered.">        return item.sellIn &lt; 0;</span>
+    }
+
+    private void setQualityTo0(Item backstage){
+<span class="fc" id="L67">        backstage.quality = backstage.quality - backstage.quality;</span>
+<span class="fc" id="L68">    }</span>
+
+    private void updateAgedBrie(Item agedBrie ){
+<span class="fc" id="L71">        updateQuality(agedBrie);</span>
+<span class="fc bfc" id="L72" title="All 2 branches covered.">        if(sellInUnder0(agedBrie)){</span>
+<span class="fc" id="L73">            updateQuality(agedBrie);</span>
+        }
+<span class="fc" id="L75">    }</span>
+
+    private void updateBackstage(Item backstage ){
+<span class="fc" id="L78">        updateQuality(backstage);</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">        if (backstage.sellIn &lt; 11) { updateQuality(backstage); }</span>
+<span class="fc bfc" id="L80" title="All 2 branches covered.">        if (backstage.sellIn &lt; 6) { updateQuality(backstage); }</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">        if (sellInUnder0(backstage)) { setQualityTo0(backstage); }</span>
+<span class="fc" id="L82">    }</span>
+
+    private void updateOtherItems( Item item){
+<span class="fc" id="L85">        updateQualityOtherItems(item);</span>
+<span class="fc bfc" id="L86" title="All 2 branches covered.">        if (sellInUnder0(item)){</span>
+<span class="fc" id="L87">            updateQualityOtherItems(item);</span>
+        }
+<span class="fc" id="L89">    }</span>
+
+    private void updateConjured( Item conjured){
+<span class="fc" id="L92">        updateOtherItems(conjured);</span>
+<span class="fc" id="L93">        updateQualityOtherItems(conjured);</span>
+<span class="fc" id="L94">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
