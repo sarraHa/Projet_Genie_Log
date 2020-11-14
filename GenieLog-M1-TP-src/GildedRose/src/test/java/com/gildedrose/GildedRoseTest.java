@@ -7,4 +7,6 @@ import static org.hamcrest.Matchers.*;
 class GildedRoseTest{
 
    
+   
+
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gildedrose.ItemTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-11-14T13:55:50" hostname="bsarra-S551LB" time="0.003">
+<testsuite name="com.gildedrose.ItemTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-11-14T14:31:27" hostname="bsarra-S551LB" time="0.003">
   <properties/>
   <testcase name="testProperties()" classname="com.gildedrose.ItemTest" time="0.001"/>
   <testcase name="testToString()" classname="com.gildedrose.ItemTest" time="0.001"/>

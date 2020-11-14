@@ -6,6 +6,12 @@ import static org.hamcrest.Matchers.*;
 
 class BackstageTest{
 
+
+    @Test
+	void mustNotBeEqualToNull() {
+        assertThat(new Backstage(), is(notNullValue()));
+    }
+
  //################ Backstage testes ##########################"/
     
     //- La qualité d'un produit n'est jamais de plus de 50.

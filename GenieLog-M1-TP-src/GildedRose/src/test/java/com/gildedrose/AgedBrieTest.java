@@ -6,7 +6,9 @@ import static org.hamcrest.Matchers.*;
 
 class AgedBrieTest{
 
- /*##################################### Aged Brie #################################*/
+   
+    
+
 
     //"Aged Brie" augmente sa qualité (`quality`) plus le temps passe.
     @Test
@@ -82,9 +84,6 @@ class AgedBrieTest{
 
             assertThat(app.items[0].quality, is( expectedQuality ));
         }
-    
-    //################ fin aged brie ##########################"/
-
 
 }
     
