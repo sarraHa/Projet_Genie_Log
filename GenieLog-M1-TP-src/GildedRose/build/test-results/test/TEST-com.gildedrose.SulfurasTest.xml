@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gildedrose.SulfurasTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-11-14T16:21:32" hostname="bsarra-S551LB" time="0.009">
+<testsuite name="com.gildedrose.SulfurasTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-11-14T16:40:56" hostname="bsarra-S551LB" time="0.011">
   <properties/>
-  <testcase name="qualitySulfuras()" classname="com.gildedrose.SulfurasTest" time="0.008"/>
+  <testcase name="qualitySulfuras()" classname="com.gildedrose.SulfurasTest" time="0.009"/>
   <testcase name="qualitySulfurasWithNegativeSellIn()" classname="com.gildedrose.SulfurasTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

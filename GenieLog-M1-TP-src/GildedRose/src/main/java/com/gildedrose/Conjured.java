@@ -4,7 +4,7 @@ class Conjured extends GildedRoseItems {
 
     @Override
     protected void updateQuality(Item item) {
-        if (item.quality > qualityMinimumValue) {
+        if (item.quality > QUALITYMINVALUE) {
         item.quality = item.quality - 1;
         }
     }

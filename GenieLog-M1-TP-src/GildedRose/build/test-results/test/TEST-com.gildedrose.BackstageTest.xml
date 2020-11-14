@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gildedrose.BackstageTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2020-11-14T16:21:32" hostname="bsarra-S551LB" time="0.049">
+<testsuite name="com.gildedrose.BackstageTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2020-11-14T16:40:56" hostname="bsarra-S551LB" time="0.044">
   <properties/>
   <testcase name="qualityBackstagePasses()" classname="com.gildedrose.BackstageTest" time="0.001"/>
-  <testcase name="qualityBackstagePassesSuperiorto50()" classname="com.gildedrose.BackstageTest" time="0.003"/>
-  <testcase name="mustNotBeEqualToNull()" classname="com.gildedrose.BackstageTest" time="0.011"/>
-  <testcase name="qualityBackstageAfterConcert()" classname="com.gildedrose.BackstageTest" time="0.0"/>
+  <testcase name="qualityBackstagePassesSuperiorto50()" classname="com.gildedrose.BackstageTest" time="0.001"/>
+  <testcase name="mustNotBeEqualToNull()" classname="com.gildedrose.BackstageTest" time="0.007"/>
+  <testcase name="qualityBackstageAfterConcert()" classname="com.gildedrose.BackstageTest" time="0.004"/>
   <testcase name="qualityBackstagePasses_1()" classname="com.gildedrose.BackstageTest" time="0.002"/>
-  <testcase name="qualityBackstagePasses_2()" classname="com.gildedrose.BackstageTest" time="0.0"/>
-  <testcase name="qualityBackstagePasses_3()" classname="com.gildedrose.BackstageTest" time="0.016"/>
-  <testcase name="qualityNotsuperiorto50()" classname="com.gildedrose.BackstageTest" time="0.001"/>
+  <testcase name="qualityBackstagePasses_2()" classname="com.gildedrose.BackstageTest" time="0.003"/>
+  <testcase name="qualityBackstagePasses_3()" classname="com.gildedrose.BackstageTest" time="0.008"/>
+  <testcase name="qualityNotsuperiorto50()" classname="com.gildedrose.BackstageTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

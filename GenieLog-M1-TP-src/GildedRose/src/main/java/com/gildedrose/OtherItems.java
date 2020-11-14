@@ -3,17 +3,17 @@ package com.gildedrose;
 class OtherItems extends GildedRoseItems {
 
     @Override
-    protected void updateQuality( Item item ) {
-        if (item.quality > qualityMinimumValue) {
+    protected void updateQuality(Item item) {
+        if (item.quality > QUALITYMINVALUE) {
             item.quality = item.quality - 1;
         }
     }
 
     @Override
-    protected void update(Item item){
+    protected void update(Item item) {
         updateSellin(item);
         updateQuality(item);
-        if (sellInUnder0(item)){
+        if (sellInUnder0(item)) {
             updateQuality(item);
         }
     }
