@@ -39,5 +39,4 @@ class GildedRose {
                 return otherItems;
         }
     }
-
 }

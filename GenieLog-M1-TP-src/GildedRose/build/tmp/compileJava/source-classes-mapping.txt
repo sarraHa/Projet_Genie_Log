@@ -1,7 +1,3 @@
-com/gildedrose/Item.java
- com.gildedrose.Item
-com/gildedrose/GildedRoseItems.java
- com.gildedrose.GildedRoseItems
 com/gildedrose/OtherItems.java
  com.gildedrose.OtherItems
 com/gildedrose/Backstage.java
@@ -10,6 +6,10 @@ com/gildedrose/AgedBrie.java
  com.gildedrose.AgedBrie
 com/gildedrose/Sulfuras.java
  com.gildedrose.Sulfuras
+com/gildedrose/Item.java
+ com.gildedrose.Item
+com/gildedrose/GildedRoseItems.java
+ com.gildedrose.GildedRoseItems
 com/gildedrose/Conjured.java
  com.gildedrose.Conjured
 com/gildedrose/GildedRose.java
