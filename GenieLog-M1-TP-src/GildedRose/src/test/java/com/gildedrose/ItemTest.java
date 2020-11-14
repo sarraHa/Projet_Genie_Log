@@ -20,4 +20,16 @@ class ItemTest{
         assertThat(app.items[0].quality, is(20));
     }
 
+     // test tostring
+     @Test
+     void testToString() {
+         
+         // name, sellIn, quality
+         
+         Item[] items = new Item[] { new Item("+5 Dexterity Vest", 5, 8) };
+         GildedRose app = new GildedRose(items);
+ 
+         assertThat(app.items[0].toString(), is( "+5 Dexterity Vest, 5, 8" ));
+     }
+
 }

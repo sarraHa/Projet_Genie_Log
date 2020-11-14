@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.gildedrose.AgedBrieTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-11-14T13:55:50" hostname="bsarra-S551LB" time="0.006">
+  <properties/>
+  <testcase name="qualityNotsuperiorto50SellInNegative()" classname="com.gildedrose.AgedBrieTest" time="0.0"/>
+  <testcase name="AgedBrieQualitySuperiorto50()" classname="com.gildedrose.AgedBrieTest" time="0.001"/>
+  <testcase name="qualityAgedBrie()" classname="com.gildedrose.AgedBrieTest" time="0.0"/>
+  <testcase name="qualityAgedBrieSellInNegative()" classname="com.gildedrose.AgedBrieTest" time="0.001"/>
+  <testcase name="qualityNotsuperiorto50_AdjBrie()" classname="com.gildedrose.AgedBrieTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
