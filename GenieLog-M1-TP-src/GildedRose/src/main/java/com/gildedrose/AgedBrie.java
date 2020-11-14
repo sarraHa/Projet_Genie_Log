@@ -1,10 +1,10 @@
 package com.gildedrose;
 
 class AgedBrie extends GildedRoseItems {
-    Item agedBrie ; 
+   // Item agedBrie ; 
 
-    AgedBrie(Item item){
-        this.agedBrie = item; 
-    }
+    //AgedBrie(Item item){
+      //  this.agedBrie = item; 
+    //}
 
 }

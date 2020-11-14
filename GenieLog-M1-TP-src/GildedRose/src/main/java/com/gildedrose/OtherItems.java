@@ -2,11 +2,11 @@ package com.gildedrose;
 
 class OtherItems extends GildedRoseItems {
 
-    Item item ; 
+    //Item item ; 
 
-    OtherItems(Item item){
-        this.item = item;
-    }
+    //OtherItems(Item item){
+    //    this.item = item;
+    //}
 
     @Override
     protected void updateQuality( Item item ) {

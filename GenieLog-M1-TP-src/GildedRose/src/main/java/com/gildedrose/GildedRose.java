@@ -23,19 +23,19 @@ class GildedRose {
     private GildedRoseItems getItemByName(Item item){
         switch(item.name) {
             case sulfuras:
-                Sulfuras sulfuras = new Sulfuras(item);
+                Sulfuras sulfuras = new Sulfuras();
                 return sulfuras;
             case agedBrie:
-                AgedBrie agedBrie = new AgedBrie(item);
+                AgedBrie agedBrie = new AgedBrie();
                 return agedBrie;
             case backstage:
-                Backstage backstage = new Backstage(item);
+                Backstage backstage = new Backstage();
                 return backstage;
             case conjured:
-                Conjured conjured = new Conjured(item);
+                Conjured conjured = new Conjured();
                 return conjured;
             default:
-                OtherItems otherItems = new OtherItems(item);
+                OtherItems otherItems = new OtherItems();
                 return otherItems;
         }
     }

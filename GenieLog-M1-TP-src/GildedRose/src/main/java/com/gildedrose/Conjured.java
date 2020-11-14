@@ -2,11 +2,11 @@ package com.gildedrose;
 
 class Conjured extends GildedRoseItems{
 
-    Item conjured ; 
+   // Item conjured ; 
 
-    Conjured(Item item){
-        this.conjured = item; 
-    }
+    //Conjured(Item item){
+      //  this.conjured = item; 
+    //}
 
     @Override
     protected void updateQuality( Item item ) {
