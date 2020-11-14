@@ -2,12 +2,6 @@ package com.gildedrose;
 
 class Conjured extends GildedRoseItems{
 
-   // Item conjured ; 
-
-    //Conjured(Item item){
-      //  this.conjured = item; 
-    //}
-
     @Override
     protected void updateQuality( Item item ) {
         if (item.quality > qualityMinimumValue) {

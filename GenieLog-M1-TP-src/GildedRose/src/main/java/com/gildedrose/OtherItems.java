@@ -2,12 +2,6 @@ package com.gildedrose;
 
 class OtherItems extends GildedRoseItems {
 
-    //Item item ; 
-
-    //OtherItems(Item item){
-    //    this.item = item;
-    //}
-
     @Override
     protected void updateQuality( Item item ) {
         if (item.quality > qualityMinimumValue) {
